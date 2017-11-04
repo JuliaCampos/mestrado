@@ -32,10 +32,13 @@ No contexto deste trabalho, al\'em de resolver o problema de escalonamento de en
 
 \section{O Problema de Escalonamento e Roteamento de Enfermeiras}
 
-O \ac{PERE} consiste em  encontrar um cronograma, de modo que cada profissional de saúde visite um conjunto de pacientes , faça uma pausa para almoço e finalize o expediente, tudo dentro da janela de tempo do profissional de saúde. 
+O \ac{PERE} consiste em  encontrar um cronograma, de modo que cada enfermeira visite um conjunto de pacientes, faça uma pausa e finalize as atividades prevista dentro da janela de trabalho. No \ac{PERE}, devemos alocar um conjunto heterogêneo de enfermeiras  que realizam visitas a um conjunto de pacientes  $P = \{ p_1, p_2, \ldots, p_{|P|} \}$, sendo que cada visita realizada a um paciente $p \in P$ por uma enfermeira $e \in E$ possui uma janela de tempo $[c_{p}, f_{p}]$, com $c_{p}$ representando o tempo inicial para chegada e $s_{p}$ representando o tempo de partida do profissional de saúde $p$. A viagem entre as residências de dois pacientes $i$ e $j$  possui o custo $c_{ij}$~\cite{rasmussenm:2012}.   
 
-No \ac{PERE}, devemos alocar um conjunto heterogêneo de enfermeiras  que realizam visitas a um conjunto de pacientes  $P = \{ p_1, p_2, \ldots, p_{|P|} \}$, sendo que cada visita realizada a um paciente $p \in P$ por uma enfermeira $e \in E$ possui a duração de tempo definida como $[c_{g}, s_{g}]$, com $e_{g}$ representando o tempo de chegada e $l_{g}$ representando o tempo de partida do profissional de saúde $p$. A viagem entre as residências de dois pacientes $i$ e $j$  possui o custo $c_{ij}$~\cite{rasmussenm:2012}.   
+Cada enfermeira $p \in P$ possui uma janela de tempo $[e_p, l_p]$ que indica o horário de início e fim do seu turno. 
 
+\cite{cheng:98} prop\^os uma modelagem para o \ac{PERE} em um grafo, simples e direcionado $G = (V,A)$. O conjunto de nós $V$, consiste em três conjuntos disjuntos: O conjunto $E$ de enfermeiras, o conjunto $P$ de pacientes e um conjunto $L$ de pausas. O conjunto de arcos $A$, é baseado em uma noção de compatibilidade. Existe uma relação binária entre cada enfermeira e qualquer outro nó. Em outras palavras, a cada enfermeira é permitida ou impedida de visitar um nó em $V$. %Sendo que o gráfico não contém loops nem arcos entre dois nós de enfermeiro ou entre dois nós de almoço.
+
+Cada cliente $q \in Q$ possui o tempo $d_q$, que indica o tempo necessário para fornecer cuidados de saúde ao cliente, e uma janela de tempo $[e_q,l_q]$ no qual $e_q$ é o limite inferior para o tempo de início do atendimento ao cliente $q$ e  $l_q$ é o limite superior do início do atendimento ao paciente $q$. O conjunto de pausas consiste em um nó único para cada profissional de saúde onde cada pausa possui uma duração e uma janela de tempo \cite{cheng:98}.
 
 %O objetivo do \ac{PERE} é maximizar a quantidade de trabalho\footnote{Pense melhor... tem certeza de quem o objetivo seja mesmo maximixar a quantidade de trabalho} minimizando a quantidade de viagens necessária. \cite{cheng:98}\footnote{Verifique novamente no artigo. Certifique-se de que esse artigo nao eh um technical report}
 
@@ -49,11 +52,10 @@ O \ac{PEE} consiste em determinar um cronograma que atribui a cada enfermeira $n
 \subsection{Problema de Escalonamento de Equipe de Serviço de Atenção Domiciliar}
 
 
-O \ac{HHCSP} tem como objetivo realizar o escalonamento e roteamento da equipe de atenção domiciliar de forma a gerar resultados eficientes~\cite{bachouch:2010}.
+%O \ac{HHCSP} tem como objetivo realizar o escalonamento e roteamento da equipe de atenção domiciliar de forma a gerar resultados eficientes~\cite{bachouch:2010}.
 
 
 
 
-Uma solução para o \ac{HHCRSP} pode ser representada em um grafo, simples e direcionado $G = (V,A)$. O conjunto de nós $V$, consiste em três conjuntos disjuntos: Um conjunto $P = \{ p_1, p_2 ..., p_{|P|} \}$ de profissionais de saúde, um conjunto $Q = \{ q_1, q_2 ..., q_{|Q|} \}$ de clientes e um conjunto L de pausas. O conjunto de arcos A, é baseado em uma noção de compatibilidade. Existe uma relação binária entre cada profissional de saúde e qualquer outro nó. Em outras palavras, a cada enfermeira é permitido ou impedido de visitar um nó em V. Sendo que o gráfico não contém loops nem arcos entre dois nós de enfermeiro ou entre dois nós de almoço.\cite{cheng:98}. 
 
-Cada profissional de saúde $p \in P$ possui uma janela de tempo $[e_p, l_p]$ que indica o horário de início e fim do seu turno. Cada cliente $q \in Q$ possui o tempo $d_q$, que indica o tempo necessário para fornecer cuidados de saúde ao cliente, e uma janela de tempo $[e_q,l_q]$ no qual $e_q$ é o limite inferior para o tempo de início do atendimento ao cliente $q$ e  $l_q$ é o limite superior do início do atendimento ao paciente $q$. O conjunto de pausas consiste em um nó único para cada profissional de saúde onde cada pausa possui uma duração e uma janela de tempo \cite{cheng:98}.
+
