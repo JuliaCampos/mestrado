@@ -34,22 +34,26 @@ No contexto deste trabalho, al\'em de resolver o problema de escalonamento de en
 
 O \ac{PERE} consiste em  encontrar um cronograma, de modo que cada enfermeira visite um conjunto de pacientes, faça uma pausa e finalize as atividades prevista dentro da janela de trabalho. No \ac{PERE}, devemos alocar um conjunto heterogêneo de enfermeiras  que realizam visitas a um conjunto de pacientes  $P = \{ p_1, p_2, \ldots, p_{|P|} \}$, sendo que cada visita realizada a um paciente $p \in P$ por uma enfermeira $e \in E$ possui uma janela de tempo $[c_{p}, f_{p}]$, com $c_{p}$ representando o tempo inicial para chegada e $s_{p}$ representando o tempo de partida do profissional de saúde $p$. A viagem entre as residências de dois pacientes $i$ e $j$  possui o custo $c_{ij}$~\cite{rasmussenm:2012}.   
 
-Cada enfermeira $p \in P$ possui uma janela de tempo $[e_p, l_p]$ que indica o horário de início e fim do seu turno. 
-
-\cite{cheng:98} prop\^os uma modelagem para o \ac{PERE} em um grafo, simples e direcionado $G = (V,A)$. O conjunto de nós $V$, consiste em três conjuntos disjuntos: O conjunto $E$ de enfermeiras, o conjunto $P$ de pacientes e um conjunto $L$ de pausas. O conjunto de arcos $A$, é baseado em uma noção de compatibilidade. Existe uma relação binária entre cada enfermeira e qualquer outro nó. Em outras palavras, a cada enfermeira é permitida ou impedida de visitar um nó em $V$. %Sendo que o gráfico não contém loops nem arcos entre dois nós de enfermeiro ou entre dois nós de almoço.
-
-Cada cliente $q \in Q$ possui o tempo $d_q$, que indica o tempo necessário para fornecer cuidados de saúde ao cliente, e uma janela de tempo $[e_q,l_q]$ no qual $e_q$ é o limite inferior para o tempo de início do atendimento ao cliente $q$ e  $l_q$ é o limite superior do início do atendimento ao paciente $q$. O conjunto de pausas consiste em um nó único para cada profissional de saúde onde cada pausa possui uma duração e uma janela de tempo \cite{cheng:98}.
-
-%O objetivo do \ac{PERE} é maximizar a quantidade de trabalho\footnote{Pense melhor... tem certeza de quem o objetivo seja mesmo maximixar a quantidade de trabalho} minimizando a quantidade de viagens necessária. \cite{cheng:98}\footnote{Verifique novamente no artigo. Certifique-se de que esse artigo nao eh um technical report}
-
-\section{O Problema de Roteamento de Enfermeiras}
+Cada enfermeira $e \in E$ possui uma janela de tempo $[c_e, f_e]$ que indica o horário de início e fim do seu turno.  Cada paciente $p \in P$ possui o tempo $d_q$, que indica o tempo necessário para fornecer cuidados de saúde ao cliente, e uma janela de tempo $[e_q,l_q]$ no qual $e_q$ é o limite inferior para o tempo de início do atendimento ao cliente $q$ e  $l_q$ é o limite superior do início do atendimento ao paciente $q$. O conjunto de pausas consiste em um nó único para cada profissional de saúde onde cada pausa possui uma duração e uma janela de tempo \cite{cheng:98}.
 
 Dado um conjunto de locais $W = \{w_0, w_1, w_2, ..., w_{|W|}\}$, sendo que $w_0$ ponto de partida do \ac{SAD}, seja um conjunto $Q = \{q_1, q_2, ..., q_{|Q|}\}$ de clientes e um conjunto de tarefas $F = \{ f_1, f_2, ..., f_{|F|}\}$.  
 Uma solução para o \ac{PEE} pode ser representada por um grafo completo $G = (V, A)$, no qual $V = \{0\} \cup Q$ é um conjunto de vértices sendo que cada vértice representa um cliente $q$ que deve ser visitado pela enfermeira $n$, e $A = \{ (i,j): i \in V, j \in V, i \neq j \}$ é o conjunto de arestas, que representa o translado entre os locais $w_i$ e $w_j$, com tempo de viagem $t_{ij}$ associado ao translado de cada enfermeira do local $w_i$ ao local $w_j$ \cite{mansini:2016}.
 
+\cite{cheng:98} prop\^os uma modelagem para o \ac{PERE} em um grafo, simples e direcionado $G = (V,A)$. O conjunto de nós $V$, consiste em três conjuntos disjuntos: O conjunto $E$ de enfermeiras, o conjunto $P$ de pacientes e um conjunto $L$ de pausas. O conjunto de arcos $A$, é baseado em uma noção de compatibilidade. Existe uma relação binária entre cada enfermeira e qualquer outro nó. Em outras palavras, a cada enfermeira é permitida ou impedida de visitar um nó em $V$. %Sendo que o gráfico não contém loops nem arcos entre dois nós de enfermeiro ou entre dois nós de almoço.
+
+
+
 O \ac{PEE} consiste em determinar um cronograma que atribui a cada enfermeira $n$ quais clientes $q$ devem ser visitados e qual tarefa $f$ deve ser realizada, respeitando um conjunto de restrições\cite{mansini:2016}.
 
-\subsection{Problema de Escalonamento de Equipe de Serviço de Atenção Domiciliar}
+
+%O objetivo do \ac{PERE} é maximizar a quantidade de trabalho\footnote{Pense melhor... tem certeza de quem o objetivo seja mesmo maximixar a quantidade de trabalho} minimizando a quantidade de viagens necessária. \cite{cheng:98}\footnote{Verifique novamente no artigo. Certifique-se de que esse artigo nao eh um technical report}
+
+%\section{O Problema de Roteamento de Enfermeiras}
+
+
+
+
+%\subsection{Problema de Escalonamento de Equipe de Serviço de Atenção Domiciliar}
 
 
 %O \ac{HHCSP} tem como objetivo realizar o escalonamento e roteamento da equipe de atenção domiciliar de forma a gerar resultados eficientes~\cite{bachouch:2010}.
