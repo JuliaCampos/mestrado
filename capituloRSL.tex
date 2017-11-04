@@ -103,8 +103,10 @@ Uma solução heurística proposta para o \ac{HHCP} por \cite{Bertels:2006} é b
 
 Foi elaborado por \cite{gambini:2012} uma solução heurística baseada em Programação Inteira para o \textit{International Nurse Rostering Competition}.
 
-Foi elaborada uma proposta de solução baseada em Programação por Restrição Ponderada para o  \textit{Second International Nurse Rostering Competition} por \cite{santos:2015}.
-
+Foi elaborada por \cite{santos:2015} uma solução para o \ac{PEE} baseada em Programação por Restrição Ponderada, na qual dado uma série de restrições, visa minimizar o peso total de todas as restrições. Par a elaboração da solução os autores utilizaram uma variante do \ac{PEE} como um problema de vários estágios com 4 a 8 semanas, onde uma semana é considerada um estágio separado e individual. O objetivo da solução elaborada é atribuir um número fixo de enfermeiros a um conjunto de turnos. As restrições que devem ser satisfeitas pela solução elaborada pelos autoes são divididas em rígidas e flexíxeis. 
+As restrições rígidas são: Cada enfermeira só pode trabalhar um turno por dia, existe uma necessidade mínima de enfermeiras para cada turno com cada habilidade, podem ser atribuídos dois dias de trabalho consecutivos para cada enfermeira, Cada enfermeira deve ter a habilidade necessária para o expediente.
+As restrições flexíveis são: Existe uma cobertura ideal por turno e habilidade, existe um limite de tarefas consecutivas, existe um limite de faltas aceitável, as enfermeiras tem preferência de mudança, as enfermeiras podem trabalhar os dois dias do final de semana.  
+Após e execução dos testes \cite{santos:2015} tiveram como resultado que, após cerca de 1000 passos, as restrições rígidas foram satisfeitas, as restrições flexíveis foram sendo resolvidas durante a fase de busca local.
 % Foi elaborada uma heurística baseada em Busca Local para o \ac{NSP}, por \cite{inafune:2016}, os autores utilizaram em seus experimentos instancias reais, colhidas de um hospital.
 % Foi elaborado por \cite{mutingi:2015} uma abordagem baseada em Algoritmo de Metamorfose Fuzzy para o \ac{NSP}, utilizando dados do mundo real e encontrados na literatura estudada.
 
