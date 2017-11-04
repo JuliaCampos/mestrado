@@ -20,16 +20,16 @@ O \ac{PERE}, tem como objetivo determinar como as visitas podem ser agendadas, e
 
 % O  Problema integrado de Escalonamento e Roteamento da Equipe de Atenção Domiciliar, o \ac{HHCRSP}, tem como objetivo construir de forma integrada o roteamento dos veículos da equipe de atendimento domiciliar, assim como, o escalonamento das equipes que serão trasportadas em cada veículo, para que seja possível percorrer todos os locais de visita e atender a um conjunto de pacientes de forma eficiente \cite{Decerle:2016}.  
 
-Foi verificado na literatura estudada a existência de diversas abordagens heurísticas, técnicas baseadas em inteligência artificial, e técnicas baseadas em métodos exatos para solucionar o problema citado.
+%Foi verificado na literatura estudada a existência de diversas abordagens heurísticas, técnicas baseadas em inteligência artificial, e técnicas baseadas em métodos exatos para solucionar o problema citado.
 
 \section{Motivação e justificativa}
 
-O roteamento e escalonamento das equipes de internação domiciliar ainda é realizado de forma manual em diversos países, inclusive no Brasil, tornando o processo ineficiente e muitas vezes gerando resultados insatisfatórios~\cite{cheng:98},~\cite{bachouch:2010},~\cite{tozlu:2016} e~\cite{cattafi:2012}.
-Estima-se que o profissional de atendimento domiciliar passam entre $18\%$ a $26\%$ do tempo de trabalho dentro do veículo realizando translados entre os pontos de atendimento~\cite{holm:2014}.
+O \ac{PERE} ainda é resolvido de forma manual em diversos países, inclusive no Brasil, tornando o processo ineficiente e muitas vezes gerando resultados insatisfatórios~\cite{cheng:98},~\cite{bachouch:2010},~\cite{tozlu:2016} e~\cite{cattafi:2012}.
+Estima-se que os profissionais envolvidos no \ac{SAD} passam entre $18\%$ a $26\%$ do tempo de trabalho dentro do veículo realizando translados entre os pontos de atendimento~\cite{holm:2014}.
 
 Acredita-se que a partir da elaboração de escalas de trabalho e de rotas mais eficientes será possível aumentar a cobertura do serviço e sua visibilidade, permitindo a expansão do atendimento a pacientes com baixa complexidade e o aumento da quantidade de atendimentos a pacientes de média ou alta complexidade.  
 
-Observando as dificuldades encontradas por diversos pesquisadores no momento de realizar o roteamento e o escalonamento do Serviço de Atendimento Domiciliar em vários países do mundo, foi idealizada uma proposta de elaborar um estudo de caso do \ac{SAD} em Salvador, e desenvolver uma solução heurística com o objetivo de aumentar o número de atendimentos da equipe de internação domiciliar. 
+Observando as dificuldades encontradas por diversos pesquisadores para encontrar boas soluções para o \ac{PERE} em vários países do mundo, foi idealizada uma proposta de elaborar um estudo de caso do \ac{SAD} em Salvador, e desenvolver um modelo de programação por restrições para o problema com o objetivo de aumentar o número de atendimentos da equipe de internação domiciliar. 
 
 % \section{Metodologia}
 % A metodologia utilizada neste projeto levará em consideração abordagens heurísticas e técnicas de teoria dos grafos, além de um estudo de caso e pesquisa qualitativa e quantitativa.
@@ -38,9 +38,9 @@ Observando as dificuldades encontradas por diversos pesquisadores no momento de 
 
 Nesta seção será apresentada a hipótese do problema, assim como o objetivo geral e específicos.
 
-\textbf{Hipótese}: \emph{É possível desenvolver uma heurística para o \ac{HHCP} aplicando ao caso específico da equipe de atendimento domiciliar FESFSUS, em Salvador, dessa forma, aumentando produtividade da equipe a partir da redução do tempo dentro do veículo, e auxiliando no aumento da eficiência do atendimento domiciliar em Salvador e região metropolitana,  e contribuindo com a expansão da cobertura do programa, possibilitando o atendimento a pacientes com baixa complexidade.}
+\textbf{Hipótese}: \emph{É possível desenvolver um modelo de programação por restrições para o \ac{HHCP} aplicando ao caso específico da equipe de atendimento domiciliar FESFSUS, em Salvador, e assim reduzir o tempo das equipes dentro dos veículos e aumentar a quantidade de atendimentos.}
 
-Este trabalho tem como objetivo principal desenvolver uma solução heurística para maximizar o número de atendimentos da equipe de atenção domiciliar e aplicar ao projeto FESFSUS em Salvador. 
+Este trabalho tem como objetivo principal desenvolver um modelo de programação por restrições para maximizar o número de atendimentos da equipe de atenção domiciliar e aplicar ao projeto FESFSUS em Salvador. 
 
 Buscando alcançar o objetivo principal, temos os seguintes objetivos específicos:
 \begin{itemize}
@@ -52,7 +52,6 @@ Buscando alcançar o objetivo principal, temos os seguintes objetivos específic
 %\item Minimizar os custos do \ac{SAD}
 %\item Propor uma heurística para o problema integrado de escalonamento e roteamento de veículos do \ac{SAD};
 \end{itemize}
-
 
 \section{Organização do trabalho}
 Este trabalho está organizado da seguinte forma: No capítulo 2 serão apresentados os problemas clássicos de roteamento e de escalonamento; no capítulo 3 serão apresentados problemas de roteamento e escalonamento aplicados à área da saúde; no capítulo 4 é apresenta uma revisão sistemática de literatura, descrevendo as heurísticas existentes; e por fim, no capítulo 5 são apresentados os trabalhos relacionados a proposta da dissertação. 

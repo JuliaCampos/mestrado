@@ -146,12 +146,14 @@ O Problema do Caixeiro Viajante, também conhecido como \ac{TSP}, é um problema
 
 Seja um grafo $G = (V,A)$ no qual $V$ é um conjunto de vértices e A é um conjunto de arestas, e seja $C = (c_{ij})$ uma matriz de distância (ou custo), associada com $A$. O \ac{TSP} consiste em determinar um circuito de distância mínima que passa por cada vértice apenas uma vez. Esse circuito é conhecido como um circuito Hamiltoniano \cite{laporte:1992}.
 
-São estudadas diversas variações do \ac{TSP} existindo várias aplicações práticas para o problema, porém neste trabalho serão descritos o Problema Múltiplo do Caixeiro Viajante e do Problema o Caixeiro Viajante com Janela de Tempo. 
+São estudadas diversas variações do \ac{PCV} existindo várias aplicações práticas para o problema, porém neste trabalho serão descritos o Problema Múltiplo do Caixeiro Viajante e do Problema o Caixeiro Viajante com Janela de Tempo. 
 
-O Problema Múltiplo do Caixeiro Viajante, tem como objetivo determinar um conjunto de rotas de custo mínimo que serão percorridas por um conjunto de Caixeiros Viajantes.
-Seja $G = (V,A,W)$ um grafo conectado, onde $V = \{v_1, v_2, ..., v_{|V|}\}$ é um conjunto de cidades, e $A = \{ v_i,v_j: v_i,v_j \in V, i \neq j\}$ é uma aresta com uma matriz custo não negativo $C = {c_{ij}: o peso de (v_i,v_j)}$. \cite{meng:2012}. 
+O \ac{PMCV}, tem como objetivo determinar um conjunto de rotas de custo mínimo que serão percorridas por um conjunto de Caixeiros Viajantes.
 
-O Problema do Caixeiro Viajante com Janela de Tempo, conhecido como \ac{TSPTW}, consiste em encontrar a viagem de menor custo, começando e terminando na mesma cidade, visitando todos os clientes uma única vez. Cada cliente possui um tempo de serviço definido por uma janela de tempo $[e_{i}, l_{i}]$, sendo $e_{i}$ o tempo de início e $l_{i}$ o tempo de término do atendimento. As visitas devem ser realizadas respeitando a janela de tempo: se o caixeiro viajante chegar antes do tempo $e_{i}$ ele deverá esperar, e o caixeiro viajante não pode permanecer após o tempo $l_{i}$.~\cite{urrutia:2010}.  
+Uma solução para o \ac{PMCV} pode ser representada a partir de um grafo $G = (V,A,W)$ um grafo conectado, onde $V = \{v_1, v_2, ..., v_{|V|}\}$ é um conjunto de cidades, e $A = \{ v_i,v_j: v_i,v_j \in V, i \neq j\}$ é uma aresta com uma matriz custo não negativo $C = {c_{ij}: o peso de (v_i,v_j)}$. $c(v_i, v_j)$ é a distância entre $v_i$ e $v_j$, denotada por $w_{ij}$. d(i) denota o número de arestas conectadas a um vértice $v_i$ no grafo. Um caminho é denotado por uma rota entre dois nós finais com grau 1. Um circuito indica uma rota que começa e termina no mesmo nó. 
+\cite{meng:2012}. 
+
+O \ac{PCVJT}, conhecido como \ac{TSPTW}, consiste em encontrar a viagem de menor custo, começando e terminando na mesma cidade e visitando todos os clientes uma única vez. Cada cliente possui um tempo de serviço definido por uma janela de tempo $[e_{i}, l_{i}]$, sendo $e_{i}$ o tempo de início e $l_{i}$ o tempo de término do atendimento. As visitas devem ser realizadas respeitando a janela de tempo.~\cite{urrutia:2010}.  
 
 Seja $G=(V,A)$ um grafo, onde $V = \{v_0, v_1, ..., n \}$ é um conjunto de n nós, sendo $0$ o depósito e a aresta $A = {(i,j): i,j \in V, i \neq j}$. A janela de tempo é representada por $[e_i, l_i]$ e para cada aresta $(i,j) \in A$ é associado um custo $c_{ij}$ e um tempo de viagem $t_{ij}$ \cite{calvo:2000}.
 
