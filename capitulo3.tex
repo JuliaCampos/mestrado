@@ -36,7 +36,7 @@ Na Tabela~\ref{enfermeira_dia}, é apresentado um exemplo de escalonamento de en
 \section{O Problema de Roteamento de Enfermeiras}
 
 Seja um conjunto de enfermeiras $N = \{n_1, n_2, ..., n_{|N|}\}$ , um conjunto de locais $W = \{w_0, w_1, w_2, ..., w_{|W|}\}$, sendo que $w_0$ representa o centro do Serviço de Atenção Domiciliar, seja um conjunto $Q = \{q_1, q_2, ..., q_{|Q|}\}$ de clientes e um conjunto de tarefas $F = \{ f_1, f_2, ..., f_{|F|}\}$.  
-Uma solução para o \ac{PEE} pode ser representada por um grafo completo $G = (V, A)$, no qual $V = \{0\} \cup Q$ é um conjunto de vértices sendo que cada vértice representa um cliente $q$ que deve ser visitado pela enfermeira $n$, e $A = \{ (i,j): i \in V, j \in V, i \neq j \}$ é o conjunto de arestas, que representa o translado entre os locais $w_i$ e $w_j$, com tempo de viagem $t_{ij}$ associado ao translado de cada enfermeira do local $w_i$ ao local $w_j$ \cite{mansini:2016}.
+Uma solução para o \ac{PRE} pode ser representada por um grafo completo $G = (V, A)$, no qual $V = \{0\} \cup Q$ é um conjunto de vértices sendo que cada vértice representa um cliente $q$ que deve ser visitado pela enfermeira $n$, e $A = \{ (i,j): i \in V, j \in V, i \neq j \}$ é o conjunto de arestas, que representa o translado entre os locais $w_i$ e $w_j$, com tempo de viagem $t_{ij}$ associado ao translado de cada enfermeira do local $w_i$ ao local $w_j$ \cite{mansini:2016}.
 
 O \ac{PEE} consiste em determinar um cronograma que atribui a cada enfermeira $n$ quais clientes $q$ devem ser visitados e qual tarefa $f$ deve ser realizada, respeitando a um conjunto de restrições\cite{mansini:2016}.
 
