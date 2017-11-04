@@ -10,14 +10,14 @@
 
 \section{Problema de Escalonamento de Enfermeiras}
 
-No restante do texto utilizaremos o termo enfermeiras como uma nomenclatura genérica a todos os profissionais de saúde que possam estar envolvidos no Serviço de Atendimento Domiciliar e termo cliente para todas as pessoas que recebam qualquer atendimento de um profissional do \ac{SAD}.
+%No restante do texto utilizaremos o termo enfermeiras como uma nomenclatura genérica a todos os profissionais de saúde que possam estar envolvidos no Serviço de Atendimento Domiciliar e termo cliente para todas as pessoas que recebam qualquer atendimento de um profissional do \ac{SAD}.
 
 O \ac{PEE}, conhecido como \ac{NSP}, é um problema de pesquisa operacional que consiste em encontrar uma atribuição de enfermeiras a turnos respeitando a um conjunto de restrições \cite{ioanis:2015}.
 
-Seja $N = \{n_1, n_2, ..., n_{|N|}\}$ um conjunto de enfermeiras, sejam $B$ turnos, divididos em matutino, vespertino, noturno ou folga, um conjunto de dias representado por $D = \{d_1, d_2, ..., d_{|D|}\}$, e um conjunto de tarefas $F = \{ f_1, f_2, ..., F_{|F|} \}$. 
+Seja $E = \{e_1, e_2, \ldots, e_{|N|}\}$ um conjunto de enfermeiras, Seja $D = \{d_1, d_2, ..., d_{|D|}\}$ um conjunto de dias, seja $F = \{ f_1, f_2, ..., F_{|F|} \}$ um conjunto de tarefas e seja $B$ um conjunto de turnos, onde cada elemento de $B$ está mapeado da seguinte forma: ($M$; matutino), ($V$; vespertino), ($N$; noturno) e ($-$; folga).
 
-Uma solução para o \ac{PEE} pode ser representada por uma matriz $M_{ND}$, na qual cada célula $m_{i,j}$ contém a atribuição para o turno que deverá ser executados pela enfermeira $n$ no dia $d$.
-Cada turno é representado pelos seguintes valores: ($M$; matutino), ($V$; vespertino), ($N$; noturno), ($-$; folga)~\cite{gambini:2012}. 
+Uma solução para o \ac{PEE} pode ser representada por uma matriz $M_{ND}$, na qual cada célula $m_{n_i,d_j}$ contém a atribuição para o turno $t\in B $ que deverá ser comprido pela enfermeira $n$ no dia $d$.
+
 
 Na Tabela~\ref{enfermeira_dia}, é apresentado um exemplo de escalonamento de enfermeiros cujos valores $n_1$, $n_2$ e $n_3$ representam os enfermeiros escalonados no período de sete dias sendo representados pelos valores $d_1$, $d_2$, $d_3$,$d_4$, $d_5$, $d_6$, $d_7$.
 
