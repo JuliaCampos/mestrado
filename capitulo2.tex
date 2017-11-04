@@ -50,11 +50,11 @@ Seja $k \in K=\{k_1, k_2, ..., k_{|K|}\}$ um conjunto de equipes e $F = \{f_1, f
 
 Esse problema leva em consideração que todas as equipes são idênticas e estão localizadas no mesmo depósito a partir do qual eles começam e terminam seu dia de trabalho, o número de equipes não pode ser maior do que o número de tarefas que serão executadas e o tempo de execução do conjunto de tarefas não pode exceder o tempo total $T$ \cite{Beasley:1996}.
 
-Para cada tarefa $f$ é associada um custo de execução, uma janela de tempo $[e_f, l_f]$, sendo $e_f$ o tempo de início da execução de cada tarefa $f$ e $l_f$ o tempo final, implicando na duração de tempo $l_f - e_f$, um tempo de viagem $/tau$ e custo $c$ envolvido na viagem da da equipe do depósito para a tarefa $f$ e vice-versa \cite{Beasley:1996}.
+Para cada tarefa $f$ é associada um custo de execução, uma janela de tempo $[e_f, l_f]$, sendo $e_f$ o tempo de início e $l_f$ o tempo final, implicando na duração de tempo $l_f - e_f$, o tempo de viagem $\tau$ e o custo $c$ envolvido na viagem da da equipe do depósito para a tarefa $f$ \cite{Beasley:1996}.
 
 Sem perda de generalidade, devemos assumir que as tarefas foram numeradas na ordem ascendente do início. Cada duas tarefas $i$ e $j$, com $j > i$ existe um arco de transição de custo $c_{ij}$, se for possível para a mesma equipe executar a tarefa $i$ e depois executar a tarefa $j$. As tarefas são organizadas de forma a criar um caminho de tarefas que serão executadas pela mesma equipe \cite{Beasley:1996}. 
 
-O objetivo do problema é, encontrar caminhos de custo total mínimo, de modo que cada tarefa seja realizada exatamente uma vez e o tempo de trabalho total envolvido em cada caminho onde, por tempo de trabalho, (significamos o tempo decorrido entre a saída do depósito e a chegada de volta ao depósito) não excede o tempo de trabalho disponível T \cite{Beasley:1996}.
+O objetivo do problema é, encontrar caminhos de custo total mínimo, de modo que cada tarefa seja realizada exatamente uma vez e o tempo de trabalho total envolvido em cada caminho onde, por tempo de trabalho (significamos o tempo decorrido entre a saída do depósito e a chegada de volta ao depósito) não excede o tempo de trabalho disponível \cite{Beasley:1996}.
 
 %Uma modelagem para o \ac{CSP} pode ser representada a partir de um grafo $G = (V, A)$, sendo cada tarefa representadas por um vértice, que estão todos ligados entre si por arestas de transição. Existindo dois depósitos mostrados como $0$ para representar o início do caminho e como $N+1$ para representar o fim do caminho. Devido a dimensão do tempo, não existem ciclos no grafo \cite{Beasley:1996}. 
 %checar referência
@@ -142,22 +142,17 @@ O objetivo do problema é, encontrar caminhos de custo total mínimo, de modo qu
 
 \section{Problema do caixeiro viajante}
 
-O Problema do Caixeiro Viajante, também conhecido como \ac{TSP}, é um problema de otimização combinatória no qual, dado um conjunto de cidades e as distâncias estre elas, o objetivo é encontrar o caminho mais curto possível que visite cada cidade exatamente uma vez \cite{goyal:2010}.
+O \ac{PCV}, também conhecido como \ac{TSP}, é um problema de otimização combinatória no qual, dado um conjunto de cidades e as distâncias estre elas, o objetivo é encontrar o caminho mais curto que visite cada cidade exatamente uma vez \cite{goyal:2010}.
 
-Seja um grafo $G = (V,A)$ no qual $V$ é um conjunto de vértices e A é um conjunto de arestas, e seja $C = (c_{ij})$ uma matriz de distância (ou custo), associada com $A$. O \ac{TSP} consiste em determinar um circuito de distância mínima que passa por cada vértice apenas uma vez. Esse circuito é conhecido como um circuito Hamiltoniano \cite{laporte:1992}.
+Seja um grafo $G = (V,A)$, no qual $V$ é um conjunto de vértices e A é um conjunto de arestas, e seja $C = (c_{ij})$ uma matriz de distância (ou custo), associada com $A$. O \ac{PCV} consiste em determinar um circuito de distância mínima que passa por cada vértice apenas uma vez. Esse circuito é conhecido como um circuito Hamiltoniano \cite{laporte:1992}.
 
-São estudadas diversas variações do \ac{PCV} existindo várias aplicações práticas para o problema, porém neste trabalho serão descritos o Problema Múltiplo do Caixeiro Viajante e do Problema o Caixeiro Viajante com Janela de Tempo. 
+São estudadas diversas variações do Problema do Caixeiro Viajante existindo várias aplicações práticas para o problema, porém neste trabalho serão descritos o Problema Múltiplo do Caixeiro Viajante e do Problema o Caixeiro Viajante com Janela de Tempo. 
 
-O \ac{PMCV}, tem como objetivo determinar um conjunto de rotas de custo mínimo que serão percorridas por um conjunto de Caixeiros Viajantes.
+Seja grafo $G = (V,A,W)$, no qual $V = \{v_1, v_2, ..., v_{|V|}\}$ é um conjunto de cidades, e $A = \{ v_i,v_j: v_i,v_j \in V, i \neq j\}$ é uma aresta com uma matriz custo não negativo $C = \{c_{ij}: o \ peso \ de \ (v_i,v_j)\}$. A distância entre $v_i$ e $v_j$ é denotada por $w_{ij}$. O \ac{PMCV}, tem como objetivo determinar um conjunto de rotas de custo mínimo que serão percorridas por um conjunto de Caixeiros Viajantes \cite{meng:2012}. 
 
-Uma solução para o \ac{PMCV} pode ser representada a partir de um grafo $G = (V,A,W)$ um grafo conectado, onde $V = \{v_1, v_2, ..., v_{|V|}\}$ é um conjunto de cidades, e $A = \{ v_i,v_j: v_i,v_j \in V, i \neq j\}$ é uma aresta com uma matriz custo não negativo $C = {c_{ij}: o peso de (v_i,v_j)}$. $c(v_i, v_j)$ é a distância entre $v_i$ e $v_j$, denotada por $w_{ij}$. d(i) denota o número de arestas conectadas a um vértice $v_i$ no grafo. Um caminho é denotado por uma rota entre dois nós finais com grau 1. Um circuito indica uma rota que começa e termina no mesmo nó. 
-\cite{meng:2012}. 
+O \ac{PCVJT}, conhecido como \ac{TSPTW}, consiste em encontrar um circuito de custo mínimo, começando e terminando no mesmo depósito e visitando a um conjunto de clientes uma única vez. Cada cliente possui um tempo de serviço delimitado por uma janela de tempo definindo o tempo de início e fim do atendimento. As visitas devem ser realizadas respeitando a janela de tempo. O custo de um circuito é a distância total percorrida \cite{urrutia:2010}.
 
-O \ac{PCVJT}, conhecido como \ac{TSPTW}, consiste em encontrar um circuito de custo mínimo, começando e terminando no mesmo depósito e visitando a um conjunto de clientes uma única vez. Cada cliente possui um tempo de serviço definido por uma janela de tempo definindo seu tempo de início e fim do atendimento. As visitas devem ser realizadas respeitando a janela de tempo. O custo de um circuito é a distância total percorrida.~\cite{urrutia:2010}.
-
-Seja $G=(V,A)$ um grafo, onde $V = \{v_0, v_1, ..., n \}$ é um conjunto de n nós, sendo $0$ o depósito e a aresta $A = {(i,j): i,j \in V, i \neq j}$. A janela de tempo é representada por $[e_i, l_i]$ e para cada aresta $(i,j) \in A$ é associado um custo $c_{ij}$ e um tempo de viagem $t_{ij}$ \cite{calvo:2000}.
-
-O Problema do Caixeiro Viajante com o Janela de Tempo é descrito por um conjunto de clientes totalmente interconectados, cada um caracterizado por um intervalo de tempo. Um dos nós representa um depósito, e cada arco possui um tempo e custo de viagem associados. O problema consiste em encontrar um passeio Hamiltoniano de custo mínimo que visita cada nó durante sua janela de tempo. O passeio começa e termina no depósito \cite{calvo:2000}.
+Seja $G=(V,A)$ um grafo, onde $V = \{v_0, v_1, ..., v_{|V|} \}$ é um conjunto de nós, sendo que o nó $0$ representa o depósito e $A = {(i,j): i,j \in V, i \neq j}$ é um conjunto de arestas. O custo de viajar de $i$ para $j$ é representado por $c_{ij}$. Cada cliente $i$ possui uma janela de tempo associada $[e_i, l_i]$, na qual $e_i$ e $l_i$representam o tempo de início e final do atendimento respectivamente. O \ac{PCVJT} consiste em encontrar um circuito hamiltoniano a partir do depósito que satisfaça todas as janelas de tempo e minimize a distância total percorrida\cite{urrutia:2010}.
 
 \section{Problema de roteamento de veículos}
 
