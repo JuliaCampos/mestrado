@@ -13,6 +13,10 @@
 \usepackage{soul}
 \usepackage[portuguesekw, portuguese, ruled, linesnumbered]{algorithm2e}
 \usepackage{amssymb,amsmath,amsthm}
+%\usepackage[toc,symbols]{glossaries}
+
+%\usepackage[toc, nonumberlist, style=altlist]{glossaries}
+%\newglossary[slg]{symbolslist}{syi}{syg}{Lista de S\'imbolos}
 
 %\usepackage[symbols,nogroupskip]{glossaries-extra}
 
@@ -215,12 +219,12 @@ A todos que de alguma forma ajudaram.
 
 % Apendices
 % Comente se naoo houver apendices
-%\appendix
+\appendix
 
 % Eh aconselhavel criar cada apendice em um arquivo separado, digamos
 % "apendice1.tex", "apendice.tex", ... "apendiceM.tex" e depois
 % inclui--los com:
-% \include{apendice1}
+\include{simbolos}
 % \include{apendice2}
 % ...
 % \include{apendiceM}
