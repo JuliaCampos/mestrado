@@ -1,0 +1,93 @@
+\xchapter{Introdução}{ }
+
+O \ac{SAD}, caracteriza-se como uma modalidade de atenção à saúde composta por um conjunto de ações de prevenção, de reabilitação e de tratamento de doenças prestadas em domicílio.
+Esse serviço tem se tornado cada vez mais presente de forma a complementar ou substituir a internação hospitalar, pois oferece uma nova forma de atendimento às pessoas com quadro clinico estável que necessitam de cuidados.
+Essa modalidade de atendimento permite maior comodidade aos pacientes, aumentando o conforto e facilitando o apoio familiar, além de reduzir os riscos de contaminação hospitalar e a lotação nos hospitais \cite{Kergosien:2009}.
+Por outro lado, o \ac{SAD} também possui algum desafios, tais como: a necessidade do deslocamento do profissional de saúde, o planejamento da escada de trabalho dos profissionais de saúde envolvidos, o aumento de custos para a família, nos casos da necessidade de manter equipamentos elétricos ligados, e a eventual estadia do cuidador ou enfermeiro.%\cite{portaL:2017}.   
+
+Na busca da melhor qualidade de vida da população e na redução de custos hospitalares, o \ac{SAD} tem sido bastante incentivado em diversos países. 
+No Brasil, esse serviço teve início na década de 1960, porém seu funcionamento foi regulamentado pelo Sistema Único de Saúde (SUS) na década de 90, a partir da lei n. 8.080, de 19 de Setembro de 1990 \cite{Silva:2010}, chegando a Salvador em 2012, através da \ac{FESFSUS}. 
+
+A \ac{FESFSUS} é um órgão público, sem fins lucrativos, que atua em 69 municípios do Estado da Bahia desde a Lei Complementar Estadual n. 29, de 21/12/2007, tendo iniciado suas atividades em 2009, começando a atuar na Bahia a partir de 16 de Abril de 2012. A fundação possui como uma das suas atribuições fornecer atenção domiciliar, de forma gratuita para os moradores da cidade de Salvador e regiões metropolitanas. Atualmente existem 9 bases e 135 pacientes internados em domicílio, e uma equipe de profissionais composta por: dois médicos, um enfermeiro, quatro técnicos de enfermagem, e um fisioterapeuta, contando também com profissionais de apoio, sendo eles: um assistente social, um nutricionista e um fonoaudiólogo.
+
+A \ac{FESFSUS} fornece serviço de atenção domiciliar a pacientes com médio ou alto grau de complexidade, como por exemplo: pacientes com sequelas de acidente vascular cerebral, cardiopatas, portadores de paralisia infantil, politraumatizados, perfurados por armas de fogo e pacientes em tratamento oncológico.
+
+Apesar do \ac{SAD} já existir há bastante tempo e em diversos países, ainda existem alguns desafios, tais como, o planejamento do escalonamento das equipes de atenção domiciliar e do roteamento dos veículos destinados a conduzir as equipes que irão realizar os atendimentos.
+
+O Problema de Escalonamento e Roteamento de Equipes do Serviço de Atenção Domiciliar, conhecido como \ac{HHCP}, tem como objetivo determinar como as visitas podem ser agendadas, e como as equipes devem ser compostas, de forma a fazer o melhor uso das equipes de profissionais de saúde e atender os pacientes da melhor forma possível~\cite{Bertels:2006} e~\cite{Decerle:2016}.
+
+% O Problema de Escalonamento de Equipe de Atenção Domiciliar, conhecido como \ac{HHCSP} tem como objetivo reduzir os custos da equipe do \ac{SAD}, de forma que o atendimento seja realizado de forma eficiente, sem prejudicar a qualidade do serviço, para  que isso seja possível, é necessário levar em consideração o tempo de atendimento $T[e_{i}, l_{i}]$ e o fato do atendimento ser realizado por um grupo de profissionais com diferentes habilidades, pela preferência dos clientes e pelo meio de transporte utilizado~\cite{Bertels:2006}. 
+
+% O  Problema integrado de Escalonamento e Roteamento da Equipe de Atenção Domiciliar, o \ac{HHCRSP}, tem como objetivo construir de forma integrada o roteamento dos veículos da equipe de atendimento domiciliar, assim como, o escalonamento das equipes que serão trasportadas em cada veículo, para que seja possível percorrer todos os locais de visita e atender a um conjunto de pacientes de forma eficiente \cite{Decerle:2016}.  
+
+Foi verificado na literatura estudada a existência de diversas abordagens heurísticas, técnicas baseadas em inteligência artificial, e técnicas baseadas em métodos exatos para solucionar o problema citado.
+
+\section{Motivação e justificativa}
+
+O roteamento e escalonamento das equipes de internação domiciliar ainda é realizado de forma manual em diversos países, inclusive no Brasil, tornando o processo ineficiente e muitas vezes gerando resultados insatisfatórios~\cite{cheng:98},~\cite{bachouch:2010},~\cite{tozlu:2016} e~\cite{cattafi:2012}.
+Estima-se que o profissional de atendimento domiciliar passam entre $18\%$ a $26\%$ do tempo de trabalho dentro do veículo realizando translados entre os pontos de atendimento~\cite{holm:2014}.
+
+Acredita-se que a partir da elaboração de escalas de trabalho e de rotas mais eficientes será possível aumentar a cobertura do serviço e sua visibilidade, permitindo a expansão do atendimento a pacientes com baixa complexidade e o aumento da quantidade de atendimentos a pacientes de média ou alta complexidade.  
+
+Observando as dificuldades encontradas por diversos pesquisadores no momento de realizar o roteamento e o escalonamento do Serviço de Atendimento Domiciliar em vários países do mundo, foi idealizada uma proposta de elaborar um estudo de caso do \ac{SAD} em Salvador, e desenvolver uma solução heurística com o objetivo de aumentar o número de atendimentos da equipe de internação domiciliar. 
+
+% \section{Metodologia}
+% A metodologia utilizada neste projeto levará em consideração abordagens heurísticas e técnicas de teoria dos grafos, além de um estudo de caso e pesquisa qualitativa e quantitativa.
+
+\section{Hipótese e objetivos}
+
+Nesta seção será apresentada a hipótese do problema, assim como o objetivo geral e específicos.
+
+\textbf{Hipótese}: \emph{É possível desenvolver uma heurística para o \ac{HHCP} aplicando ao caso específico da equipe de atendimento domiciliar FESFSUS, em Salvador, dessa forma, aumentando produtividade da equipe a partir da redução do tempo dentro do veículo, e auxiliando no aumento da eficiência do atendimento domiciliar em Salvador e região metropolitana,  e contribuindo com a expansão da cobertura do programa, possibilitando o atendimento a pacientes com baixa complexidade.}
+
+Este trabalho tem como objetivo principal desenvolver uma solução heurística para maximizar o número de atendimentos da equipe de atenção domiciliar e aplicar ao projeto FESFSUS em Salvador. 
+
+Buscando alcançar o objetivo principal, temos os seguintes objetivos específicos:
+\begin{itemize}
+\item Analisar o tempo utilizado pela equipe do \ac{SAD} no percurso entre pontos de atendimentos;
+\item Analisar o escalonamento das equipes que serão transportadas em cada veículo;
+\item Analisar as rotas de veículos elaboradas pela equipe do \ac{SAD};
+\item Analisar heurísticas existentes para os problemas de roteamento e escalonamento do \ac{SAD};
+\item Propor uma heurística para o problema de escalonamento e roteamento de equipes do \ac{SAD};
+%\item Minimizar os custos do \ac{SAD}
+%\item Propor uma heurística para o problema integrado de escalonamento e roteamento de veículos do \ac{SAD};
+\end{itemize}
+
+
+\section{Organização do trabalho}
+Este trabalho está organizado da seguinte forma: No capítulo 2 serão apresentados os problemas clássicos de roteamento e de escalonamento; no capítulo 3 serão apresentados problemas de roteamento e escalonamento aplicados à área da saúde; no capítulo 4 é apresenta uma revisão sistemática de literatura, descrevendo as heurísticas existentes; e por fim, no capítulo 5 são apresentados os trabalhos relacionados a proposta da dissertação. 
+    
+% \begin{figure}[ht]
+% \begin{center}
+% \begin{tikzpicture}[scale=0.4]
+% 	%ponto central
+% 	\draw node[draw] at (0, 0) {$0$};
+% 	\draw node[draw] at (5,5) {$N+1$};
+
+%     %lado direito x
+%     \draw[->, red, dotted, thick] (1.5, -0.5) node[below] {$c_{0,1}$} (0.2, 0) -- (2.8, -1.0) ;
+%    	\fill[black] (3,-1) circle (2mm) node[above right] {$v_1$};
+
+%     \draw[->, red, dotted, thick] (4.4, -0.6) node[below] {$c_{1,2}$}  (3.2, -1) -- (5.8, 0);
+%     \fill[black] (6,0) circle (2mm) node[above right] {$v_2$};
+
+%     \draw[->, red, dotted, thick] (7.4, -0.1) node[below] {$c_{2,3}$}  (6.2, 0) -- (8.8, 0);
+%     \fill[black] (9,0) circle (2mm) node[above right] {$v_3$};   
+ 
+%     \draw[->, red, dotted, thick] (10.4, -0.1) node[below] {$c_{3,4}$}  (9.2, 0) -- (11.8, 0);
+%     \fill[black] (12,0) circle (2mm) node[above right] {$v_4$};    
+
+%     \draw[->, red, dotted, thick] (10.8, 2) node[below] {$c_{4,5}$}   (11.8, 0.1) -- (9.3, 3);
+%     \fill[black] (9.1, 3.1) circle (2mm) node[above right] {$v_5$};    
+
+%    \draw[->, red, dotted, thick] (6.9, 3) node[below] {$c_{5,6}$}   (9, 3.1) -- (6,2 );
+%    \fill[black] (5.8, 2) circle (2mm) node[above right] {$v_6$};    
+
+% 	\draw[->, red, dotted, thick]  (4.1, 2.5) node[below] {$c_{6,7}$}  (5.6, 2) -- (3,2 );
+%    \fill[black] (2.8, 2) circle (2mm) node[above right] {$v_7$};  
+  	
+% 	\draw[->, red, dotted, thick]  (3.2, 4) node[below] {$c_{7,N+1}$}   (2.7, 2) -- (4.8,4.6 );
+% \end{tikzpicture}
+% \end{center}
+% \caption{Grafo de pesos?}
+% \end{figure}
