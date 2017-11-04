@@ -12,49 +12,48 @@
 
 %No restante do texto utilizaremos o termo enfermeiras como uma nomenclatura genérica a todos os profissionais de saúde que possam estar envolvidos no Serviço de Atendimento Domiciliar e termo cliente para todas as pessoas que recebam qualquer atendimento de um profissional do \ac{SAD}.
 
-O \ac{PEE}, conhecido como \ac{NSP}, é um problema de pesquisa operacional que consiste em encontrar uma atribuição de enfermeiras a turnos respeitando a um conjunto de restrições \cite{ioanis:2015}.
-
-Seja $E = \{e_1, e_2, \ldots, e_{|N|}\}$ um conjunto de enfermeiras, Seja $D = \{d_1, d_2, ..., d_{|D|}\}$ um conjunto de dias, seja $F = \{ f_1, f_2, ..., F_{|F|} \}$ um conjunto de tarefas e seja $B$ um conjunto de turnos, onde cada elemento de $B$ está mapeado da seguinte forma: ($M$; matutino), ($V$; vespertino), ($N$; noturno) e ($-$; folga).
-
-Uma solução para o \ac{PEE} pode ser representada por uma matriz $M_{ND}$, na qual cada célula $m_{n_i,d_j}$ contém a atribuição para o turno $t\in B $ que deverá ser comprido pela enfermeira $n$ no dia $d$.
+O \ac{PEE} consiste em encontrar uma atribuição de enfermeiras a turnos respeitando a um conjunto de restrições \cite{ioanis:2015}. Seja $E = \{e_1, e_2, \ldots, e_{|E|}\}$ um conjunto de enfermeiras, Seja $D = \{d_1, d_2, ..., d_{|D|}\}$ um conjunto de dias, seja $F = \{ f_1, f_2, ..., F_{|F|} \}$ um conjunto de tarefas e seja $B$ um conjunto de turnos, onde cada elemento de $B$ está mapeado da seguinte forma: ($M$, matutino), ($V$, vespertino), ($N$, noturno) e ($-$, folga). Uma solução para o \ac{PEE} pode ser representada por uma matriz $M_{|E|\times |D|}$, na qual cada célula $m_{e_i,d_j} \in M$ contém a atribuição para o turno $t\in B $ que deverá ser comprido pela enfermeira $e_i$ no dia $d_j$.
 
 
-Na Tabela~\ref{enfermeira_dia}, é apresentado um exemplo de escalonamento de enfermeiros cujos valores $n_1$, $n_2$ e $n_3$ representam os enfermeiros escalonados no período de sete dias sendo representados pelos valores $d_1$, $d_2$, $d_3$,$d_4$, $d_5$, $d_6$, $d_7$.
+A Tabela~\ref{enfermeira_dia} apresenta um exemplo de escalonamento de enfermeiras cujos valores $n_1$, $n_2$ e $n_3$ representam os enfermeiras escalonados no período de sete dias sendo representados pelos valores $d_1$, $d_2$, $d_3$,$d_4$, $d_5$, $d_6$, $d_7$.
 
 \begin{table}[ht]
  \centering
 \caption{Exemplo de escalonamento de três enfermeiras no horizonte de sete dias de trabalho \label{enfermeira_dia}}
 \begin{tabular}{r|l|l|l|l|l|l|l}
   	   & $d_1$ & $d_2$ & $d_3$ & $d_4$ & $d_5$ & $d_6$ & $d_7$ \\ \hline
- $n_1$ & $M$  & $V$  & $N$  & $M$  & $V$  & $V$  & $-$ \\ \hline
- $n_2$ & $V$  & $-$  & $M$  & $N$  & $N$  & $-$  & $V$\\ \hline
- $n_3$ & $M$  & $M$  & $V$  & $N$  & $-$  & $M$  & $V$
+ $e_1$ & $M$  & $V$  & $N$  & $M$  & $V$  & $V$  & $-$ \\ \hline
+ $e_2$ & $V$  & $-$  & $M$  & $N$  & $N$  & $-$  & $V$\\ \hline
+ $e_3$ & $M$  & $M$  & $V$  & $N$  & $-$  & $M$  & $V$
 \end{tabular}
 \end{table}
 
+No contexto deste trabalho, al\'em de resolver o problema de escalonamento de enfermeiras, tamb\'em devemos nos preocupar com a ordem de atendimento dos pacientes. \'E importante que um determinado paciente que iniciou seu tratamento sob os cuidados da enfermeira $e_i$ continue seu tratamento com a mesma. Sendo assi, \'e necess\'ario integrar o problema de escalonamento ao problema de rotamento, o que aumenta o desafio dessa proposta.
+
+\section{O Problema de Escalonamento e Roteamento de Enfermeiras}
+
+O \ac{PERE} consiste em  encontrar um cronograma, de modo que cada profissional de saúde visite um conjunto de pacientes , faça uma pausa para almoço e finalize o expediente, tudo dentro da janela de tempo do profissional de saúde. 
+
+No \ac{PERE}, devemos alocar um conjunto heterogêneo de enfermeiras  que realizam visitas a um conjunto de pacientes  $P = \{ p_1, p_2, \ldots, p_{|P|} \}$, sendo que cada visita realizada a um paciente $p \in P$ por uma enfermeira $e \in E$ possui a duração de tempo definida como $[c_{g}, s_{g}]$, com $e_{g}$ representando o tempo de chegada e $l_{g}$ representando o tempo de partida do profissional de saúde $p$. A viagem entre as residências de dois pacientes $i$ e $j$  possui o custo $c_{ij}$~\cite{rasmussenm:2012}.   
+
+
+%O objetivo do \ac{PERE} é maximizar a quantidade de trabalho\footnote{Pense melhor... tem certeza de quem o objetivo seja mesmo maximixar a quantidade de trabalho} minimizando a quantidade de viagens necessária. \cite{cheng:98}\footnote{Verifique novamente no artigo. Certifique-se de que esse artigo nao eh um technical report}
 
 \section{O Problema de Roteamento de Enfermeiras}
 
-Seja um conjunto de enfermeiras $N = \{n_1, n_2, ..., n_{|N|}\}$ , um conjunto de locais $W = \{w_0, w_1, w_2, ..., w_{|W|}\}$, sendo que $w_0$ representa o centro do Serviço de Atenção Domiciliar, seja um conjunto $Q = \{q_1, q_2, ..., q_{|Q|}\}$ de clientes e um conjunto de tarefas $F = \{ f_1, f_2, ..., f_{|F|}\}$.  
-Uma solução para o \ac{PRE} pode ser representada por um grafo completo $G = (V, A)$, no qual $V = \{0\} \cup Q$ é um conjunto de vértices sendo que cada vértice representa um cliente $q$ que deve ser visitado pela enfermeira $n$, e $A = \{ (i,j): i \in V, j \in V, i \neq j \}$ é o conjunto de arestas, que representa o translado entre os locais $w_i$ e $w_j$, com tempo de viagem $t_{ij}$ associado ao translado de cada enfermeira do local $w_i$ ao local $w_j$ \cite{mansini:2016}.
+Dado um conjunto de locais $W = \{w_0, w_1, w_2, ..., w_{|W|}\}$, sendo que $w_0$ ponto de partida do \ac{SAD}, seja um conjunto $Q = \{q_1, q_2, ..., q_{|Q|}\}$ de clientes e um conjunto de tarefas $F = \{ f_1, f_2, ..., f_{|F|}\}$.  
+Uma solução para o \ac{PEE} pode ser representada por um grafo completo $G = (V, A)$, no qual $V = \{0\} \cup Q$ é um conjunto de vértices sendo que cada vértice representa um cliente $q$ que deve ser visitado pela enfermeira $n$, e $A = \{ (i,j): i \in V, j \in V, i \neq j \}$ é o conjunto de arestas, que representa o translado entre os locais $w_i$ e $w_j$, com tempo de viagem $t_{ij}$ associado ao translado de cada enfermeira do local $w_i$ ao local $w_j$ \cite{mansini:2016}.
 
-O \ac{PEE} consiste em determinar um cronograma que atribui a cada enfermeira $n$ quais clientes $q$ devem ser visitados e qual tarefa $f$ deve ser realizada, respeitando a um conjunto de restrições\cite{mansini:2016}.
-
-\section{Serviço de Atenção domiciliar}
-
-O Serviço de Atenção Domiciliar também conhecido como \ac{HHC} oferece atendimento médico à pacientes em suas residências. 
+O \ac{PEE} consiste em determinar um cronograma que atribui a cada enfermeira $n$ quais clientes $q$ devem ser visitados e qual tarefa $f$ deve ser realizada, respeitando um conjunto de restrições\cite{mansini:2016}.
 
 \subsection{Problema de Escalonamento de Equipe de Serviço de Atenção Domiciliar}
 
-O Escalonamento de Equipe de Serviço de Atenção Domiciliar, conhecido como \ac{HHCSP}, consiste em alocar um conjunto heterogêneo de profissionais de saúde $P = \{ p_1, p_2 ..., p_{|P|} \}$  que realizam visitas a um conjunto de pacientes  $G = \{ g_1, g_2 ..., g_{|G|} \}$, sendo que cada visita realizada a um paciente $g \in G$ por um profissional de saúde $p \in P$ possui a duração de tempo definida como $[e_{g}, l_{g}]$, com $e_{g}$ representando o tempo de chegada e $l_{g}$ representando o tempo de partida do profissional de saúde $p$. A viagem entre as residências de dois pacientes $i$ e $j$  possui o custo $c_{ij}$~\cite{rasmussenm:2012}.   
 
 O \ac{HHCSP} tem como objetivo realizar o escalonamento e roteamento da equipe de atenção domiciliar de forma a gerar resultados eficientes~\cite{bachouch:2010}.
 
 
-\subsection{Problema de Escalonamento e Roteamento de Equipe de Serviço de Atenção Domiciliar}
 
-O Problema de Escalonamento e Roteamento de Equipe de Serviço de Atenção Domiciliar, também conhecido como \ac{HHCRSP} consiste em  encontrar um cronograma, de modo que cada profissional de saúde visite um conjunto de pacientes , faça uma pausa para almoço e finalize o expediente, tudo dentro da janela de tempo do profissional de saúde. O objetivo do \ac{HHCRSP} é maximizar a quantidade de trabalho minimizando a quantidade de viagem necessária. \cite{cheng:98}
 
-Uma solução para o \ac{HHCRSP} pode ser representada em um grafo, simples e direcionado $G = (V,A)$. O conjunto de nós $V$, consiste em três conjuntos disjuntos: Um conjunto $P = \{ p_1, p_2 ..., p_{|P|} \}$ de profissionais de saúde, um conjunto $Q = \{ q_1, q_2 ..., q_{|Q|} \}$ de clientes e um conjunto L de pausas. O conjunto de arcos A, é baseado em uma noção de compatibilidade. Existe uma relação binária entre cada profissional de saúde e qualquer outro nó. Em outras palavras, a cada enfermeiro é permitido ou impedido de visitar um nó em V. Sendo que o gráfico não contém loops nem arcos entre dois nós de enfermeiro ou entre dois nós de almoço.\cite{cheng:98}. 
+Uma solução para o \ac{HHCRSP} pode ser representada em um grafo, simples e direcionado $G = (V,A)$. O conjunto de nós $V$, consiste em três conjuntos disjuntos: Um conjunto $P = \{ p_1, p_2 ..., p_{|P|} \}$ de profissionais de saúde, um conjunto $Q = \{ q_1, q_2 ..., q_{|Q|} \}$ de clientes e um conjunto L de pausas. O conjunto de arcos A, é baseado em uma noção de compatibilidade. Existe uma relação binária entre cada profissional de saúde e qualquer outro nó. Em outras palavras, a cada enfermeira é permitido ou impedido de visitar um nó em V. Sendo que o gráfico não contém loops nem arcos entre dois nós de enfermeiro ou entre dois nós de almoço.\cite{cheng:98}. 
 
 Cada profissional de saúde $p \in P$ possui uma janela de tempo $[e_p, l_p]$ que indica o horário de início e fim do seu turno. Cada cliente $q \in Q$ possui o tempo $d_q$, que indica o tempo necessário para fornecer cuidados de saúde ao cliente, e uma janela de tempo $[e_q,l_q]$ no qual $e_q$ é o limite inferior para o tempo de início do atendimento ao cliente $q$ e  $l_q$ é o limite superior do início do atendimento ao paciente $q$. O conjunto de pausas consiste em um nó único para cada profissional de saúde onde cada pausa possui uma duração e uma janela de tempo \cite{cheng:98}.
