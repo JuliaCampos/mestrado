@@ -15,7 +15,7 @@ O Problema de Alocação de Pessoal consiste em atribuir um conjunto de tarefas 
 
 Seja um conjunto de pessoas $S = \{s_1,s_ 2, ..., s_{|S|}\}$ e um conjunto de tarefas  $F = \{f_1, f_2, ..., f_{|F|}\}$. Uma solução para o Problema de Alocação de Pessoal, também conhecido como \textit{Staff Scheduling}, pode ser representado por uma matriz $M$, na qual cada linha representa uma tarefa que deverá ser executada por uma pessoa $s \in S$ e cada célula $m_{f,s}$, contém o valor referente a atribuição da tarefa $f \in F$ à pessoa $s \in S$.
 
-A Tabela \ref{time_table_block}, representa um exemplo da alocação de um conjunto de tarefas a um conjunto de pessoas de forma que cada tarefa é associada a uma pessoa, sendo que o valor $1$ na célula $m_{fs}$ indica que a pessoa $s$ deve executar a tarefa $f$, caso contrário o valor na célula $m_{fs}$ será 0.
+A Tabela \ref{time_table_block}, representa um exemplo da alocação de um conjunto de tarefas a um conjunto de pessoas de forma que cada tarefa seja associada a uma pessoa, sendo que o valor $1$ na célula $m_{fs}$ indica que a pessoa $s$ deve executar a tarefa $f$, caso contrário o valor na célula $m_{fs}$ será 0.
 
 \begin{table}[h]
 \centering
@@ -52,7 +52,7 @@ Esse problema leva em consideração que todas as equipes são idênticas e est�
 
 Para cada tarefa $f$ é associada um custo de execução, uma janela de tempo $[e_f, l_f]$, sendo $e_f$ o tempo de início e $l_f$ o tempo final, implicando na duração de tempo $l_f - e_f$, o tempo de viagem $\tau$ e o custo $c$ envolvido na viagem da da equipe do depósito para a tarefa $f$ \cite{Beasley:1996}.
 
-Sem perda de generalidade, devemos assumir que as tarefas foram numeradas na ordem ascendente do início. Cada duas tarefas $i$ e $j$, com $j > i$ existe um arco de transição de custo $c_{ij}$, se for possível para a mesma equipe executar a tarefa $i$ e depois executar a tarefa $j$. As tarefas são organizadas de forma a criar um caminho de tarefas que serão executadas pela mesma equipe \cite{Beasley:1996}. 
+Sem perda de generalidade, devemos assumir que as tarefas foram numeradas na ordem ascendente. Cada duas tarefas $i$ e $j$, com $j > i$ existe um arco de transição de custo $c_{ij}$, se for possível para a mesma equipe executar a tarefa $i$ e depois executar a tarefa $j$. As tarefas são organizadas de forma a criar um caminho de tarefas que serão executadas pela mesma equipe \cite{Beasley:1996}. 
 
 O objetivo do problema é, encontrar caminhos de custo total mínimo, de modo que cada tarefa seja realizada exatamente uma vez e o tempo de trabalho total envolvido em cada caminho onde, por tempo de trabalho (significamos o tempo decorrido entre a saída do depósito e a chegada de volta ao depósito) não excede o tempo de trabalho disponível \cite{Beasley:1996}.
 
@@ -148,15 +148,15 @@ Seja um grafo $G = (V,A)$, no qual $V$ é um conjunto de vértices e A é um con
 
 São estudadas diversas variações do Problema do Caixeiro Viajante existindo várias aplicações práticas para o problema, porém neste trabalho serão descritos o Problema Múltiplo do Caixeiro Viajante e do Problema o Caixeiro Viajante com Janela de Tempo. 
 
-Seja grafo $G = (V,A,W)$, no qual $V = \{v_1, v_2, ..., v_{|V|}\}$ é um conjunto de cidades, e $A = \{ v_i,v_j: v_i,v_j \in V, i \neq j\}$ é uma aresta com uma matriz custo não negativo $C = \{c_{ij}: o \ peso \ de \ (v_i,v_j)\}$. A distância entre $v_i$ e $v_j$ é denotada por $w_{ij}$. O \ac{PMCV}, tem como objetivo determinar um conjunto de rotas de custo mínimo que serão percorridas por um conjunto de Caixeiros Viajantes \cite{meng:2012}. 
+Seja grafo $G = (V,A,W)$, no qual $V = \{v_1, v_2, ..., v_{|V|}\}$ é um conjunto de cidades, e $A = \{ v_i,v_j: v_i,v_j \in V, i \neq j \}$ é uma aresta com uma matriz custo não negativo $C = \{c_{ij}: o \ peso \ de \ (v_i,v_j)\}$. A distância entre $v_i$ e $v_j$ é denotada por $w_{ij}$. O \ac{PMCV}, tem como objetivo determinar um conjunto de rotas de custo mínimo que serão percorridas por um conjunto de Caixeiros Viajantes \cite{meng:2012}. 
 
 O \ac{PCVJT}, conhecido como \ac{TSPTW}, consiste em encontrar um circuito de custo mínimo, começando e terminando no mesmo depósito e visitando a um conjunto de clientes uma única vez. Cada cliente possui um tempo de serviço delimitado por uma janela de tempo definindo o tempo de início e fim do atendimento. As visitas devem ser realizadas respeitando a janela de tempo. O custo de um circuito é a distância total percorrida \cite{urrutia:2010}.
 
-Seja $G=(V,A)$ um grafo, onde $V = \{v_0, v_1, ..., v_{|V|} \}$ é um conjunto de nós, sendo que o nó $0$ representa o depósito e $A = {(i,j): i,j \in V, i \neq j}$ é um conjunto de arestas. O custo de viajar de $i$ para $j$ é representado por $c_{ij}$. Cada cliente $i$ possui uma janela de tempo associada $[e_i, l_i]$, na qual $e_i$ e $l_i$representam o tempo de início e final do atendimento respectivamente. O \ac{PCVJT} consiste em encontrar um circuito hamiltoniano a partir do depósito que satisfaça todas as janelas de tempo e minimize a distância total percorrida\cite{urrutia:2010}.
+Seja $G=(V,A)$ um grafo, onde $V = \{v_0, v_1, ..., v_{|V|} \}$ é um conjunto de nós, sendo que o nó $0$ representa o depósito e $A = \{ (i,j): i,j \in V, i \neq j \}$ é um conjunto de arestas. O custo de viajar de $i$ para $j$ é representado por $c_{ij}$. Cada cliente $i$ possui uma janela de tempo associada $[e_i, l_i]$, na qual $e_i$ e $l_i$representam o tempo de início e final do atendimento respectivamente. O \ac{PCVJT} consiste em encontrar um circuito hamiltoniano a partir do depósito que satisfaça todas as janelas de tempo e minimize a distância total percorrida\cite{urrutia:2010}.
 
 \section{Problema de roteamento de veículos}
 
-O problema clássico de roteamento de veículos, conhecido como \ac{VRP}, tem como objetivo encontrar um conjunto de rotas com custo mínimo, começando e terminando a rota no depósito, de modo que seja cumprida a demanda dos clientes. Cada local é visitado uma vez, e cada veículo possui uma capacidade limitada \cite{gold:2008}.
+O problema clássico de roteamento de veículos, conhecido como \ac{VRP}, Tem como objetivo encontrar uma rota com custo mínimo de modo que seja cumprida a demanda dos clientes. A rota começa e termina no depósito e cada local é visitado apenas uma vez. Cada local é visitado uma vez, e cada veículo possui uma capacidade limitada \cite{gold:2008}.
 
 Seja um conjunto de clientes $Q = \{q_1, q_2, ..., q_{|Q|}\}$, que residem em locais $W = \{w_0, w_1, w_2, ..., w_{|W|}\}$ diferentes. Cada par de locais $(i,j)$, onde  $i,j \in W$ e $i \neq j$, é associado a um tempo de translado $\tau$ e uma distância $u_{ij}$. O depósito, local de onde os veículos partem e retornam, é denotado por $w_0$.
 Os clientes são atendidos a partir de um depósito com uma frota  homogênea $Z = \{1, 2, ..., z_{|Z|}\}$ de veículos com capacidade uniforme $y$~\cite{gold:2008}.

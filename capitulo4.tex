@@ -29,63 +29,65 @@ Como resultados esperados após o fim da pesquisa, temos:
 A metodologia utilizada neste projeto levará em consideração abordagens heurísticas e técnicas de teoria dos grafos, além de um estudo de caso e pesquisa qualitativa e quantitativa.
 A seguir serão analisadas algumas abordagens heurísticas, sendo uma delas utilizadas para basear a construção de uma nova heurística para o \ac{SAD}. 
 
-% \subsection{Heurística gulosa}
+\subsection{Programação por Restrição}
 
-% Algoritmos gulosos sempre escolhem a melhor solução para o momento partindo do ótimo local em busca do ótimo global. Apesar deste algoritmo encontrar a solução ótima para vários problemas, nem sempre é possível alcançar a solução ótima a partir da execução deste algoritmo~\cite{Cormen:2009}. 
+A Programa de Lógica por Restrições consiste em um conjunto finito de restrições contendo conjunções de literais, objetos atômicos comuns sem símbolos de função e restrições sobre um determinado domínio. A programação por restrições lógicas é uma extensão da programação lógica, sendo ambas consideradas pertencentes ao paradigma declarativo, dessa forma o programador foca em o que computar ao invés de como computar. neste método possui um conjunto finito de regras cujo corpo contem conjunções de literais, simbolo atômicos e restrições de domínio~\cite{maria:2008}.
 
-% Em um algoritmo guloso, a cada iteração, um novo elemento do conjunto solução é incorporado à construção da solução parcial até que a solução completa seja obtida. A seleção do próximo elemento que será incorporado é determinado a partir da função gulosa de avaliação. Essa função gulosa representa o aumento incremental na função custo para a incorporação deste elemento na solução parcial em construção~\cite{resende:2014}. O critério para estabelecer qual elemento será selecionado é o do elemento menos custoso, como podemos ver no algoritmo~\ref{guloso}. 
+\textbf{As restrições lineares} denotam restrições construídas a partir de variáveis
+cujo domínio é dado pelo conjunto dos números reais. Para este tipo de
+restrições têm sido implementados meta-interpretadores de restrições bastante
+eficientes que utilizam o algoritmo Simplex como ponto de partida.
 
-% \begin{algorithm}[H]
-%  \Entrada{$C \neq \emptyset$} //conjunto de candidatos \\
-%  \Saida{melhor solução segundo o critério guloso}
-%    \Inicio{
-%    		$S \longleftarrow \emptyset $ \mbox{//o conjunto solução $S$ está vazio inicialmente} \\
-%         $C \longleftarrow E $ \mbox{//inicializa o conjunto $C$ com o conjunto inicial $E$} \\
-%      \While {$C \neq \emptyset \wedge \neg solucao(S)$ }{
-%         $ x \longleftarrow seleciona(C)$ \mbox{//seleciona o proximo candidato} \\
-%         $C \longleftarrow C - x$ \mbox{//remove x do conjunto de candidatos} \\
-%         \eIf{Viavel($S + x$)}{
-%         	$S \longleftarrow S + x$  \mbox{//adiciona o candidato ao conjunto solucao}\\
-%         }{$S \longleftarrow S$} \mbox{//nao atualiza o conjunto solucao} \\
-%      }
-%      \Retorna{S} \mbox{//melhor solução segundo o critério guloso} \\
-%    }
-%  \caption{Algoritmo guloso}
-%  \label{guloso}
-% \end{algorithm}
+As restrições podem ser classificadas em fortes ou flexíveis. As Restrições Fortes: Do inglês, \textit{Hard Constraints} , são restrições que devem ser satisfeitas obrigatoriamente; e as Restrições fracas: Também do inglês,\textit{Soft Constraints} , é um conjunto de restrições que devem ser satisfeitas se possível, mas para as quais sabem-se que nem todas poderão ser atendidas.
 
-%\subsection{Greedy Randomized Adaptative Search procedure - GRASP}
+A partir da análise dos mateiras estudados, foi verificado que o método de Programação por Restrições tem se mostrado eficiente na solução de problemas de escalonamento e de roteamento na áreas da saúde. 
 
-%O GRASP é uma heurística gulosa adaptativa de randomização iterativa constituída por duas fases: Uma fase construtiva e outra fase de busca local~\cite{feo:1995} e~\cite{resende:2014}.
+O \ac{PERE} conta com o seguinte conjunto de restrições:
 
-%Para descrever o GRASP será levado em consideração o problema de otimização combinatorial para minimizar a função $f(s)$ para cada solução $S \in X$, sendo definido a partir de um conjunto inicial finito $E = \{ e1, e2, ..., en \}$ para um conjunto viável de um conjunto soluções viáveis $X \subseteq 2^E$ e pela função objetiva $f:2^E \leftarrow R$. 
-%O conjunto de soluções viáveis para o problema é definido a partir do E, a função objetivo e das restrições~\cite{resende:2014}.
+\textbf{Restrições fortes:}
+\begin{itemize}
+\item Uma enfermeira não pode trabalhar mais de um turno por dia;
+\item A demanda de enfermeiras para cada turno deve ser satisfeita durante todo o planeja-mento;
+\item Alguns profissionais de saúde não podem trabalhar simultaneamente.
+\end{itemize}
+ 
+\textbf{Restrições flexíveis:}
+\begin{itemize}
+\item Existe uma limitação para o número de turnos atribuídos as enfermeiras; 
+\item Existe uma limitação para a quantidade de dias de folga consecutivos; 
+\item Existe um máximo número de dias de trabalho consecutivos;
+\item Existe um máximo número de fins-de-semana trabalhados consecutivos;
+\item Deve haver um número de dias de folga após uma série de turnos noturnos;
+\item Existe um máximo número de fins-de-semana trabalhados em um período de quatro semanas; 
+\item Devem ser atribuídos turnos idênticos no fim-de-semana;
+\item Uma enfermeira não pode ser atribuída à um turno que demanda mais qualidades do que a mesma possui.
+\end{itemize}
 
-%Na fase de construção é elaborada uma solução, se esta solução não for viável, esta é descartada ou é aplicada uma heurística reparatória para alcançar a viabilidade. Uma vez que a solução viável é obtida, a vizinhança que possui a solução é investigada até que seja encontrado o mínimo local através da etapa de busca local. Levando em consideração que o GRASP é uma heurística gulosa, não é garantido que a solução ótima será encontrada todas as vezes a partir do ótimo local~\cite{resende:2014}.
+A Linguagem de Programação Lógica baseia-se em diversos domínios, destacando-se as restrições booleanas, sobre domínios finitos, sobre intervalos reais e os termos lineares. Outros exemplos incluem listas, conjuntos finitos e árvores.
 
-%A heurística adaptativa é chamada dessa forma porque os benefícios associados com cada elemento é atualizado a cada iteração da fase construtiva para refletir as mudanças trazidas pela seleção do elemento anterior.
+\textbf{As restrições booleanas} são tratadas por meta-interpretadores de restrições
+especializados, podendo, no entanto, ser tratadas como um caso particular das
+restrições associadas a domínios finitos para esse problema. Neste último caso
+as variáveis apenas podem tomar dois valores inteiros: 0 (falso) ou 1
+(verdadeiro);
 
-%Para a elaboração da etapa construtiva, na qual solução viável é construída iterativamente, um elemento por vez e a cada iteração a escolha do próximo elemento que será adicionado é determinado pela ordem de todos os elementos candidatos em uma lista que respeita a função gulosa, são utilizados algoritmos randomizados.
-%Os algoritmos randomizados são importantes para gerar o espaço de busca inicial em uma vizinhança, quebrar loops, habilitar trajetórias diferentes para seguir em uma mesma solução inicial ou simplificar diferentes partes em uma vizinhança extensa. 
-%Na fase de busca local, é utilizado um algoritmo de busca local que funciona de maneira iterativa, substituindo sucessivamente a solução corrente pela melhor solução encontrada na vizinhança, determinando quando a melhor solução não é encontrada na vizinhança ~\cite{resende:2014}.
+\textbf{As restrições sobre domínios finitos} são utilizadas em muitas áreas do
+conhecimento. Para satisfação destas restrições usa-se uma combinação de
+técnicas para a preservação de consistência, propagação de valores e pesquisa
+com retrocesso. Cada variável possui associado um conjunto finito de valores
+inteiros, ao qual é dado o nome de domínio da variável. Os valores do domínio
+que levam a inconsistências são removidos do domínio das variáveis durante a
+fase de propagação, enquanto que pela pesquisa se tenta instanciar cada
+variável do problema;
 
+\textbf{As restrições sobre intervalos reais} são o equivalente das consideradas para os domínios finitos, só que aqui trabalha-se com valores reais em vez de
+valores inteiros. As técnicas de remoção de inconsistências são similares às
+técnicas usadas para os domínios finitos, ou então são baseadas em técnicas
+matemáticas de diferenciação automática ou as séries de Taylor;
 
-%\subsection{Adaptative Iterated Construction Search}
-%não tem artigos falando sobre
-
-%O \ac{AICS}, assim como o \ac{GRASP}, é um algoritmo utilizado para resolver problemas de otimização, pertencente à sub-área de otimização estocástica, ou seja, o conjunto de soluções viáveis que é ou pode ser reduzido a um conjunto discreto. Esse algoritmo utiliza a experiência adquirida em soluções passadas para gerar soluções melhores. Uma forma de implementar esta ideia é associar pesos com possíveis decisões que serão tomadas durante o processo construtivo. Estes pesos são adaptados através de múltiplas iterações do processo de busca para refletir a experiência de iterações passadas \cite{hoss:2005}.
-
-\subsection{Constraint Programming}
-
-O problema de satisfação de restrição, consiste em um conjunto finito de variáveis, sendo que cada variável está associada a um valor e a um conjunto de restrições.  A solução para o problema de satisfação por restrição é a satisfação de todas as restrições do domínio~\cite{maria:2008}.
-
-A programação por restrições lógicas é uma extensão da programação lógica, sendo ambas consideradas pertencentes ao paradigma declarativo, dessa forma o programador foca em o que computar ao invés de como computar. neste método possui um conjunto finito de regras cujo corpo contem conjunções de literais, simbolo atômicos e restrições de domínio~\cite{maria:2008}.
-
-%\subsection{Variable Neighborhood Search}
-
-%O \ac{VNS} explora uma vizinhança de forma a chegar cada vez mais distante da solução atual, trocando a solução atual por uma nova, se e somente se, a melhoria já foi feita, dessa forma, características de uma solução cuja varias variáveis já possuem seu valor ótimo, serão mantidas e usadas para obter uma boa vizinhança~\cite{hansen:2001}.
-
-%Seja $N_{k} = (1, 2, ..., k_{max}) $ um conjunto finito de estruturas de vizinhanças pré selecionadas, $N_{k}(x)$ um conjunto solução da vizinhança $k$ de $x$. A condição de parada é a máxima capacidade da CPU, o maior número de iterações, o a maior quantidade de iterações entre duas melhorias. Geralmente, sucessivas vizinhanças $N_{k}$ estão aninhadas~\cite{hansen:2001}.
+\textbf{As restrições lineares} denotam restrições construídas a partir de variáveis cujo domínio é dado pelo conjunto dos números reais. Para este tipo de
+restrições têm sido implementados meta-interpretadores de restrições bastante
+eficientes que utilizam o algoritmo Simplex como ponto de partida.
 
 \section{Atividades previstas}
 %trata-se   da   explicitação   do   modo   como  será desenvolvido o trabalho
@@ -101,7 +103,7 @@ A partir da pesquisa realizada no caso específico da cidade de Salvador e dos e
 
 \subsection{Cronograma de atividades}
 
-O cronograma seguinte apresenta o desenvolvimento das atividades executadas desde o início da pós-graduação, tendo as atividades representadas a cada mês levado em consideração um curso com duração de 24 meses, com início em Novembro de 2016 e final previsto para Novembro de 2019, no qual as disciplinas obrigatórias e optativas, assim como o estágio docente orientado foram realizados no primeiro ano de curso, como pode ser visto na seguinte figura \ref{cronograma_atividade}.
+O cronograma seguinte apresenta o desenvolvimento das atividades executadas desde o início da pós-graduação, tendo as atividades representadas a cada mês levado em consideração um curso com duração de 24 meses, com início em Novembro de 2016 e final previsto para Novembro de 2018, no qual as disciplinas obrigatórias e optativas, assim como o estágio docente orientado foram realizados no primeiro ano de curso, como pode ser visto na seguinte figura \ref{cronograma_atividade}.
 
 %cronograma de atividades
 \begin{figure}[H]
