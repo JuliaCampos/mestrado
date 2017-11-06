@@ -13,19 +13,19 @@ O Problema de Alocação de Pessoal consiste em atribuir um conjunto de tarefas 
 
 %O escalonamento de pessoal deve ser realizado de forma que o serviço esteja disponível durante todo o tempo previsto pela organização. Caso o trabalho de uma equipe não interfira ou não dependa do trabalho de outra equipe, então as equipes podem ser escalonadas de forma independente, caso exista alguma relação de dependência, as equipes devem ser escalonadas levando em consideração estas relações \cite{blochiger:2003}.
 
-Seja um conjunto de pessoas $S = \{s_1,s_ 2, ..., s_{|S|}\}$ e um conjunto de tarefas  $F = \{f_1, f_2, ..., f_{|F|}\}$. Uma solução para o Problema de Alocação de Pessoal, também conhecido como \textit{Staff Scheduling}, pode ser representado por uma matriz $M$, na qual cada linha representa uma tarefa que deverá ser executada por uma pessoa $s \in S$ e cada célula $m_{f,s}$, contém o valor referente a atribuição da tarefa $f \in F$ à pessoa $s \in S$.
+Sejam $S = \{s_1,s_ 2, ..., s_{|S|}\}$  um conjunto de pessoas e $T = \{t_1, t_2, \ldots, t_{|T|}\}$ e um conjunto de tarefas. Uma solução para o Problema de Alocação de Pessoal pode ser representada por uma matriz $M$, na qual cada célula $m_{f_is_j}$, contém o valor referente a atribuição da tarefa $t_i \in T$ à pessoa $s_j \in S$.
 
-A Tabela \ref{time_table_block}, representa um exemplo da alocação de um conjunto de tarefas a um conjunto de pessoas de forma que cada tarefa seja associada a uma pessoa, sendo que o valor $1$ na célula $m_{fs}$ indica que a pessoa $s$ deve executar a tarefa $f$, caso contrário o valor na célula $m_{fs}$ será 0.
+A Tabela \ref{time_table_block}, apresenta um exemplo da alocação de um conjunto de tarefas a um conjunto de pessoas de forma que cada tarefa seja associada a uma pessoa, sendo que o valor $1$ na célula $m_{fs}$ indica que a pessoa $s$ deve executar a tarefa $f$, caso contrário o valor na célula $m_{fs}$ será 0.
 
 \begin{table}[h]
 \centering
 \caption{Exemplo de alocação de um conjunto de tarefas a um conjunto de pessoas. \label{time_table_block}} 
 \begin{tabular}{r|l|l|l|l}
    & $s_1$ & $s_1$ & $s_3$ & $s_4$ \\ \hline
-$f_1$ & 0  & 0  & 1  & 0  \\ \hline
-$f_2$ & 1  & 0  & 0  & 0  \\ \hline
-$f_3$ & 0  & 0  & 0  & 1  \\ \hline
-$f_4$ & 0  & 1  & 0  & 0 
+$t_1$ & 0  & 0  & 1  & 0  \\ \hline
+$t_2$ & 1  & 0  & 0  & 0  \\ \hline
+$t_3$ & 0  & 0  & 0  & 1  \\ \hline
+$t_4$ & 0  & 1  & 0  & 0 
 \end{tabular}
 \end{table}
 
@@ -46,11 +46,9 @@ $f_4$ & 0  & 1  & 0  & 0
 
 \subsection{Problema de Alocação de Equipe Técnica}
 %UMA ABORDAGEM OTIMIZADA PARA O PROBLEMA DE ALOCAÇÃO DE EQUIPES E ESCALONAMENTO DE TAREFAS PARA A OBTENÇÃO DE CRONOGRAMAS EFICIENTES
-Seja $k \in K=\{k_1, k_2, ..., k_{|K|}\}$ um conjunto de equipes e $F = \{f_1, f_2, ..., f_{|F|}\}$ um conjunto de tarefas. O Problema de Alocação de Equipe Técnica \ac{PAET}, também conhecido como \ac{CSP} consiste em alocar um conjunto de equipes $K$ a um conjunto de tarefas $F$ \cite{Beasley:1996}. 
+Já no \ac{PAET}, considera-se um conjunto $K=\{k_1, k_2, ..., k_{|K|}\}$ de equipes em que o objetivo consiste em alocar um conjunto de equipes $K$ a um conjunto de tarefas $F$ \cite{Beasley:1996}. Esse problema leva em consideração que todas as equipes são idênticas e estão localizadas no mesmo depósito a partir do qual eles começam e terminam seu dia de trabalho, o número de equipes não pode ser maior do que o número de tarefas que serão executadas e o tempo de execução do conjunto de tarefas não pode exceder o tempo total $T$ \cite{Beasley:1996}.
 
-Esse problema leva em consideração que todas as equipes são idênticas e estão localizadas no mesmo depósito a partir do qual eles começam e terminam seu dia de trabalho, o número de equipes não pode ser maior do que o número de tarefas que serão executadas e o tempo de execução do conjunto de tarefas não pode exceder o tempo total $T$ \cite{Beasley:1996}.
-
-Para cada tarefa $f$ é associada um custo de execução, uma janela de tempo $[e_f, l_f]$, sendo $e_f$ o tempo de início e $l_f$ o tempo final, implicando na duração de tempo $l_f - e_f$, o tempo de viagem $\tau$ e o custo $c$ envolvido na viagem da da equipe do depósito para a tarefa $f$ \cite{Beasley:1996}.
+Para cada tarefa $t\in T$ é associada um custo de execução, uma janela de tempo $[e_t, l_t]$, sendo $e_t$ o tempo de início e $l_t$ o tempo de término, implicando na duração de tempo $l_f - e_f$, o tempo de viagem $\tau$ e o custo $c$ envolvido na viagem da equipe do depósito para a tarefa $f$ \cite{Beasley:1996}.
 
 Sem perda de generalidade, devemos assumir que as tarefas foram numeradas na ordem ascendente. Cada duas tarefas $i$ e $j$, com $j > i$ existe um arco de transição de custo $c_{ij}$, se for possível para a mesma equipe executar a tarefa $i$ e depois executar a tarefa $j$. As tarefas são organizadas de forma a criar um caminho de tarefas que serão executadas pela mesma equipe \cite{Beasley:1996}. 
 
