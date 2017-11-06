@@ -63,31 +63,31 @@ O \ac{PERE} conta com o seguinte conjunto de restrições:
 \item Uma enfermeira não pode ser atribuída à um turno que demanda mais qualidades do que a mesma possui.
 \end{itemize}
 
-A Linguagem de Programação Lógica baseia-se em diversos domínios, destacando-se as restrições booleanas, sobre domínios finitos, sobre intervalos reais e os termos lineares. Outros exemplos incluem listas, conjuntos finitos e árvores.
+% A Linguagem de Programação Lógica baseia-se em diversos domínios, destacando-se as restrições booleanas, sobre domínios finitos, sobre intervalos reais e os termos lineares. Outros exemplos incluem listas, conjuntos finitos e árvores.
 
-\textbf{As restrições booleanas} são tratadas por meta-interpretadores de restrições
-especializados, podendo, no entanto, ser tratadas como um caso particular das
-restrições associadas a domínios finitos para esse problema. Neste último caso
-as variáveis apenas podem tomar dois valores inteiros: 0 (falso) ou 1
-(verdadeiro);
+% \textbf{As restrições booleanas} são tratadas por meta-interpretadores de restrições
+% especializados, podendo, no entanto, ser tratadas como um caso particular das
+% restrições associadas a domínios finitos para esse problema. Neste último caso
+% as variáveis apenas podem tomar dois valores inteiros: 0 (falso) ou 1
+% (verdadeiro);
 
-\textbf{As restrições sobre domínios finitos} são utilizadas em muitas áreas do
-conhecimento. Para satisfação destas restrições usa-se uma combinação de
-técnicas para a preservação de consistência, propagação de valores e pesquisa
-com retrocesso. Cada variável possui associado um conjunto finito de valores
-inteiros, ao qual é dado o nome de domínio da variável. Os valores do domínio
-que levam a inconsistências são removidos do domínio das variáveis durante a
-fase de propagação, enquanto que pela pesquisa se tenta instanciar cada
-variável do problema;
+% \textbf{As restrições sobre domínios finitos} são utilizadas em muitas áreas do
+% conhecimento. Para satisfação destas restrições usa-se uma combinação de
+% técnicas para a preservação de consistência, propagação de valores e pesquisa
+% com retrocesso. Cada variável possui associado um conjunto finito de valores
+% inteiros, ao qual é dado o nome de domínio da variável. Os valores do domínio
+% que levam a inconsistências são removidos do domínio das variáveis durante a
+% fase de propagação, enquanto que pela pesquisa se tenta instanciar cada
+% variável do problema;
 
-\textbf{As restrições sobre intervalos reais} são o equivalente das consideradas para os domínios finitos, só que aqui trabalha-se com valores reais em vez de
-valores inteiros. As técnicas de remoção de inconsistências são similares às
-técnicas usadas para os domínios finitos, ou então são baseadas em técnicas
-matemáticas de diferenciação automática ou as séries de Taylor;
+% \textbf{As restrições sobre intervalos reais} são o equivalente das consideradas para os domínios finitos, só que aqui trabalha-se com valores reais em vez de
+% valores inteiros. As técnicas de remoção de inconsistências são similares às
+% técnicas usadas para os domínios finitos, ou então são baseadas em técnicas
+% matemáticas de diferenciação automática ou as séries de Taylor;
 
-\textbf{As restrições lineares} denotam restrições construídas a partir de variáveis cujo domínio é dado pelo conjunto dos números reais. Para este tipo de
-restrições têm sido implementados meta-interpretadores de restrições bastante
-eficientes que utilizam o algoritmo Simplex como ponto de partida.
+% \textbf{As restrições lineares} denotam restrições construídas a partir de variáveis cujo domínio é dado pelo conjunto dos números reais. Para este tipo de
+% restrições têm sido implementados meta-interpretadores de restrições bastante
+% eficientes que utilizam o algoritmo Simplex como ponto de partida.
 
 \section{Atividades previstas}
 %trata-se   da   explicitação   do   modo   como  será desenvolvido o trabalho

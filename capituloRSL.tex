@@ -60,7 +60,7 @@ Após a realização da busca dos artigos nas bases de dados especificadas, os a
 \item Revisões de literatura.
 \end{itemize}
 
-Após a aplicação dos critérios de inclusão e de exclusão nos 151 artigos coletados, 41 artigos foram aceitos por atenderem a todos os critérios de inclusão e 110 artigos foram rejeitados por se encaixarem em pelo menos um critério de exclusão. %Como pode ser observado na figura \ref{status}
+Após a aplicação dos critérios de inclusão e de exclusão nos 151 artigos coletados, 38 artigos foram aceitos por atenderem a todos os critérios de inclusão e 113 artigos foram rejeitados por se encaixarem em pelo menos um critério de exclusão. %Como pode ser observado na figura \ref{status}
 
 %colocar figura nos slides
 % \begin{figure}[H]
@@ -72,8 +72,23 @@ Após a aplicação dos critérios de inclusão e de exclusão nos 151 artigos c
 
 \section{Resumo dos resultados encontrados}
 
+Foi elaborada por \cite{santos:2015} uma solução para o \ac{PEE} baseada em Programação por Restrição Ponderada, na qual dado uma série de restrições, visa minimizar o peso total de todas as restrições. Par a elaboração da solução os autores utilizaram uma variante do \ac{PEE} como um problema de vários estágios com 4 a 8 semanas, onde uma semana é considerada um estágio separado e individual. O objetivo da solução elaborada é atribuir um número fixo de enfermeiros a um conjunto de turnos. As restrições que devem ser satisfeitas pela solução elaborada pelos autoes são divididas em rígidas e flexíveis.
+Após e execução dos testes os autores tiveram como resultado que, após cerca de 1000 passos, as restrições rígidas foram satisfeitas, as restrições flexíveis foram sendo resolvidas durante a fase de busca local.
 
 \cite{mansini:2016} propôs uma técnica de programação matemática para solucionar o Problema de Roteamento de Enfermeiras, modelando o problema como uma variante do \textit{Multi-Vehicle Traveling Purchaser Problem} (MVTPP-PIC), elaborando uma solução a partir da abordagem \textit{Branch and Price}. Para realizar os testes computacionais, os autores geraram instâncias 10 novas instâncias para testar os algoritmos, adotando parcialmente o método de geração proposto para o MVTPP-PIC um artigo publicado por eles mesmos no ano anterior, encontrando uma solução ótima em três de  dez instâncias.
+
+\cite{bachouch:2010} desenvolveran uma ferramenta de otimização e propuseram uma abordagem baseada em Programação Inteira Linear  para enfermeiros em um escritório francês HHC, com o propósito de equilibrar a carga de trabalho, minimizando a diferença entre o limite superior e inferior da carga de trabalho. Os autores realizaram 60 experimentos, baseados em 10 conjuntos de 10, 15 e 20 tarefas para 3 e 5 enfermeiras, gerados aleatóriamente. Após a realização dos testes, os autores conseguiram equilibrar a carga de trabalho entre os profissionais de saúde.
+
+Foi desenvolvido uma solução heurística para solucionar o \textit{Crew Constrained Home Care Routing Problem with Time Windows} por \cite{tozlu:2016}, descrevendo o problema a partir de um modelo de Programação Linear Misto, com o objetivo de minimizar a distância total viajada pelas equipes. Para a realização dos testes computacionais foi gerado aleatoriamente um conjunto de instâncias que foram  resolvidas a partir do \textit{Variable Neighbourhood Search}. Os autores conseguiram alcançar o objetivo em 175 instâncias das 192 instâncias testadas.
+
+Foi proposto por  \cite{trabelsi:2012} um modelo de escalonamento baseado em Programação Interira Linear para  equilibrar a carga de trabalho dos enfermeiros do \ac{HHC},  minimizando a diferença entre o limite superior e inferior da carga de trabalho. O modelo foi testado para diferentes tamanhos de problemas: de 4 a 15 pacientes para 2, 3 e 4 enfermeiras, sendo apresentados apenas resultados obtidos para 7, 10 e 15 pacientes e 2, 3 e 4 enfermeiros.
+
+Uma abordagem baseada em Programação por Restrições para o \ac{HHCP} foi elaborada por \cite{cattafi:2012}, tendo como estudo de caso a realidade enfrentada pela cidade de Ferrara na Itália, onde o problema é resolvido manualmente. O autor formalizou o problema através da interação com a equipe de enfermagem do hospital da cidade, tendo como objetivo minimizar a carga horária máxima semanal. Ao final do experimento, os autores chegaram a conclusão de que a Programação Lógica pode ser eficaz para resolver problemas da vida real.
+
+Foi proposto por \cite{Decerle:2016} uma solução baseada em Programação Inteira Linear Mista com o objetivo de minimizar os custos relacionados ao transporte e as horas trabalhadas pela equipe do Serviço de Atenção Domiciliar. Para a execução de testes computacionais, foram utilizadas instâncias de dois escritórios do Serviço de Atenção Domiciliar. Os autores encontraram bons resultados em instâncias de tamanho médio.
+
+Uma solução heurística proposta para o \ac{HHCP} por \cite{Bertels:2006} é baseada na combinação de Programação Linear Inteira, Programação por Restrições e meta-heurísticas. As instâncias utilizadas para gerar a solução foram obtidas a partir de 10 cenários sintéticos, contendo entre 20 e 50 profissionais e entre 111 e 326 trabalhos.
+
 
 \cite{nguyen:2016} apresenta uma solução meta-heurística com base em Algoritmos Genéticos para solucionar o \ac{HHCP}. Em sua abordagem são utilizadas duas substituições: A primeira substitui as soluções anteriores aleatoriamente e a segunda substitui as piores soluções. Os testes computacionais foram realizados com instâncias baseadas em dados históricos reais de uma empresa de \textit{Home Care} que opera na Suíça.
 
@@ -90,7 +105,7 @@ Em busca de encontrar a solução para o \ac{HHCSP}, \cite{trautsamwieser:2014} 
 
 Uma abordagem baseada em Programação por Restrições para o \ac{HHCP} foi elaborada por \cite{cattafi:2012}, Tendo como estudo de caso a realidade enfrentada pela cidade de Ferrara na Itália, onde o problema é resolvido manualmente. O autor formalizou o problema através da interação com a equipe de enfermagem do hospital da cidade, tendo como objetivo reduzir as disparidades nas jornadas de trabalho das enfermeiras.
 
-\cite{bachouch:2010} descrevem um método para agendar tarefas e equilibrar a carga de trabalho dos profissionais do \ac{HHCSP} baseado na realidade dos hospitais da França. 
+
 
 Foi desenvolvido uma solução heurística para solucionar o \textit{Crew Constrained Home Care Routing Problem with Time Windows} por \cite{tozlu:2016}, descrevendo o problema a partir de um modelo de programação linear misto e em seguida foi gerado aleatoriamente um conjunto de instâncias e resolvidos a partir do \textit{Variable Neighbourhood Search}. 
 
@@ -105,8 +120,6 @@ Uma solução heurística proposta para o \ac{HHCP} por \cite{Bertels:2006} é b
 
 Foi elaborado por \cite{gambini:2012} uma solução heurística baseada em Programação Inteira para o \textit{International Nurse Rostering Competition}.
 
-Foi elaborada por \cite{santos:2015} uma solução para o \ac{PEE} baseada em Programação por Restrição Ponderada, na qual dado uma série de restrições, visa minimizar o peso total de todas as restrições. Par a elaboração da solução os autores utilizaram uma variante do \ac{PEE} como um problema de vários estágios com 4 a 8 semanas, onde uma semana é considerada um estágio separado e individual. O objetivo da solução elaborada é atribuir um número fixo de enfermeiros a um conjunto de turnos. As restrições que devem ser satisfeitas pela solução elaborada pelos autoes são divididas em rígidas e flexíveis.
-Após e execução dos testes os autores tiveram como resultado que, após cerca de 1000 passos, as restrições rígidas foram satisfeitas, as restrições flexíveis foram sendo resolvidas durante a fase de busca local.
 
 % Foi elaborada uma heurística baseada em Busca Local para o \ac{NSP}, por \cite{inafune:2016}, os autores utilizaram em seus experimentos instancias reais, colhidas de um hospital.
 % Foi elaborado por \cite{mutingi:2015} uma abordagem baseada em Algoritmo de Metamorfose Fuzzy para o \ac{NSP}, utilizando dados do mundo real e encontrados na literatura estudada.
