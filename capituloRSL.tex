@@ -109,64 +109,27 @@ Na modelagem multi objetiva, existem vários objetivos que estão em conflito en
 
  \cite{luna:2013} propuseram uma heurística para o Problema de Escalonamento de Equipe técnica baseada em Algoritmos Evolutivos, utilizando quatro instâncias reais, fornecidas por uma empresa privada. Os resultados mostram,  que o algoritmo proposto retornou resultados eficientes a partir da base de dados real utilizada e  que a paralelização proposta permite ao algoritmo abordar adequadamente instâncias com mais de 10000 instâncias. 
  
-\cite{maenhout:2011} propos uma mete heurística evolutiva para resolver o Problema de Escalonamento de Enfermeira, tendo como objetivo maximizar o número de tarefas realizadas, dessa forma evitando desvios no cronograma. Para a realização dos testes computacionais foram gerados dados aleatóriamente. Os resultados computacionais mostram que o procedimento produz um equilíbrio certo entre um mecanismo de diversificação bem-realizado e três mecanismos complementares de intensificação. 
+\cite{maenhout:2011} propôs uma mete heurística evolutiva para resolver o Problema de Escalonamento de Enfermeira, tendo como objetivo maximizar o número de tarefas realizadas, dessa forma evitando desvios no cronograma. Para a realização dos testes computacionais foram gerados dados aleatoriamente. Os resultados computacionais mostram que o procedimento produz um equilíbrio certo entre um mecanismo de diversificação bem-realizado e três mecanismos complementares de intensificação. 
 
 \cite{constantino:2011} elaborou uma abordagem heurística para o \ac{NSP}, baseada em Satisfação de Preferência Balanceada. O algoritmo elaborado pelos autores possui duas fases. Os testes computacionais foram realizados com instâncias do \textit{Standard Benchmark Bataset} e a partir dos experimentos os autores concluíram que o método utilizado gerou resultados efetivos e eficientes para solucionar o problema.
 
 O algoritmo de Busca Harmônica  tem sido utilizado para solucionar problemas de otimização, este método funciona a partir da imitação do processo de improvisação musical.  Foi elaborada uma abordagem meta-heurística baseada em Busca Harmônica para o \ac{NSP}, por\cite{awadallah:2011}. Para realizar os testes computacionais foram utilizados dados do \textit{ International Nurse Rostering Competition 2010}, retornando bons resultados.
 
-
-
-
-
-
-% Baseado na teoria Fuzzy, \cite{mutingi:2013}  elaborou uma heurística para o escalonamento de equipe de atendimento domiciliar, utilizando o método de Enxame de Particulas Fuzzy.
-Em busca de encontrar a solução para o \ac{HHCSP}, \cite{trautsamwieser:2014} elaboraram uma heurística  \textit{Branch-Price-and-Cut} para o Problema. Em testes computacionais o autor testou sua abordagem com instâncias baseadas em mais de nove enfermeiras, 45 clientes e 203 visitas durante a semana.
-
-Uma abordagem baseada em Programação por Restrições para o \ac{HHCP} foi elaborada por \cite{cattafi:2012}, Tendo como estudo de caso a realidade enfrentada pela cidade de Ferrara na Itália, onde o problema é resolvido manualmente. O autor formalizou o problema através da interação com a equipe de enfermagem do hospital da cidade, tendo como objetivo reduzir as disparidades nas jornadas de trabalho das enfermeiras.
-
-Foi desenvolvido uma solução heurística para solucionar o \textit{Crew Constrained Home Care Routing Problem with Time Windows} por \cite{tozlu:2016}, descrevendo o problema a partir de um modelo de programação linear misto e em seguida foi gerado aleatoriamente um conjunto de instâncias e resolvidos a partir do \textit{Variable Neighbourhood Search}. 
-
-%Para encontrar uma boa solução para o \ac{NSP} \cite{kundu:2008} converteu o problema no Problema de Satisfação de Restrição e aplicou a técnica de Busca Local Gulosa incorporada com a Lista Tabu, testando também outras soluções baseadas no Restrição e aplicou o \textit{Simulated Anealing}, Algoritmo Genético, obtendo melhores resultados a partir da Busca Local Gulosa.
-%Foi proposto por \cite{trabelsi:2012} um modelos de escalonamento baseado em Programação Interira Linear para fornecer soluções para o planejamento de curto prazo para o \ac{HHC}.
-
-%Foi encontrada uma solução para o \textit{Therapist Routing and Scheduling Problem} a partir de um algoritmo sequencial adaptativo de Busca Gulosa Randomizada, o GRASP por \cite{bard:2012}, para testar sua solução foram realizados testes com dados reais fornecidos por uma empresa de reabilitação dos EUA, obtendo como resultado reduções de custo com uma média de cerca de 18,09\%.
-
-Foi elaborado por \cite{Decerle:2016} uma heurística de duas fases para o \ac{HHCRSP} com o objetivo de reduzir custos relacionados a transporte e a horas trabalhadas pelos profissionais de saúde. Para solucionar o problema foram sugeridos duas abordagens: Um método de solução monofásica no qual um conjunto de dados é considerado como entrada para encontrar uma boa solução para o problema e uma meta-heurística em duas fases para distinguir o agendamento das enfermeiras. As abordagens são então aplicadas a várias instâncias de diferentes tamanhos, obtidas a partir de dois escritórios de \textit{Home Health Care} para compará-las.
-
-Uma solução heurística proposta para o \ac{HHCP} por \cite{Bertels:2006} é baseada na combinação de Programação Linear Inteira, Programação por Restrição e meta-heurísticas. As instâncias utilizadas para gerar a solução foram obtidas a partir de 10 cenários sintéticos, contendo entre 20 e 50 profissionais e entre 111 e 326 trabalhos.
-
-Foi elaborado por \cite{gambini:2012} uma solução heurística baseada em Programação Inteira para o \textit{International Nurse Rostering Competition}.
-
-
-% Foi elaborada uma heurística baseada em Busca Local para o \ac{NSP}, por \cite{inafune:2016}, os autores utilizaram em seus experimentos instancias reais, colhidas de um hospital.
-% Foi elaborado por \cite{mutingi:2015} uma abordagem baseada em Algoritmo de Metamorfose Fuzzy para o \ac{NSP}, utilizando dados do mundo real e encontrados na literatura estudada.
-
-\cite{constantino:2011} elaborou uma abordagem heurística para o \ac{NSP}, baseada em Satisfação de Preferência Balanceada. O algoritmo elaborado pelos autores possui duas fases: Na primeira fase é construída a solução inicial, resolvendo o problema sucessivo de atribuição por estrangulamento e na segunda fase são aplicados dois procedimentos de melhoria baseados em etapas de reatribuição. Os testes computacionais foram realizados com instâncias do \textit{Standard Benchmark Bataset} e a partir dos experimentos os autores concluíram que o método utilizado gerou resultados efetivos e eficientes para solucionar o problema.
-
-% Foi formulada uma nova solução para o \ac{NSP} por \cite{baskaran:2014} utilizando o \textit{Branch and Bound} e o solucionador de simplex duplo, obtendo bons resultados a partir da aplicação de instâncias do mundo real.
-% Uma abordagem colaborativa para resolver o \ac{NSP} foi elaborada por \cite{cares:2013} usando uma formulação de programação não-linear. Neste modelo, a função a ser otimizada é não-linear, esta função é focada em procurar uma solução que minimiza as diferenças entre os enfermeiros. Os autores utilizaram instâncias do mundo real para realizar os testes, obtendo resultados efetivos.
-
-O algoritmo de Busca Harmônica  tem sido utilizado para solucionar problemas de otimização, este método funciona a partir da imitação do processo de improvisação musical.  Foi elaborada uma abordagem meta-heurística baseada em Busca Harmônica para o \ac{NSP}, por\cite{awadallah:2011}. Para realizar os testes computacionais foram utilizados dados do \textit{ International Nurse Rostering Competition 2010}, retornando bons resultados.
-
-Foi desenvolvida um abordagem baseada em Programação Inteira Binária para gerar uma solução heurística para o \ac{NSP}, por \cite{Zen-El-Din:2012}. O autor realizou um estudo de caso  na unidade de terapia intensiva no Hospital do Cairo, sendo que os dados foram coletados de enfermeiros-chefe, supervisores, enfermeiros e assistentes.
-
-Uma abordagem para resolver o \ac{NSP} em um hospital público na França foi desenvolvida por \cite{altamirano:2010} baseada em otimização por Enxame de Partículas, tendo resultados semelhantes em tempo computacional ao método de Programação Inteira e Programação por Restrição.
-
-Foi elaborada uma heurística para o \ac{NSP} baseada em Vetorização de Matrizes por \cite{yindong:2008}, após experimentos computacionais foram obtidas boas soluções para 10 instâncias de dados reais de programação de enfermagem. 
-Foi elaborado um modelo baseado em Lógica Fuzzy para solucionar o \ac{NSP} por \cite{topaloglu:2010}.
-Um modelo de Programação Inteira Multi Objetivo para o \ac{NSP} foi proposto por \cite{cetin:2015}, em seguida os autores elaboram uma abordagem baseada em Lógica Fuzzy e aplicam a um estudo de cado em um hospital em Konya, na Turquia.
-
-Foi elaborado por \cite{gutjahra:2007} uma heurística baseada em Colônia de Formiga para resolver o \ac{NSP} no \textit{Vienna Hospital Compound} na Áustria. Após realizar experimentos, foi observado que o algoritmo proposto alcança melhorias significativas em comparação a um algoritmo de abordagem gulosa.
-Uma abordagem de otimização de Enxame de Particulas é proposto por \cite{wu:2015} para encontrar uma boa solução para o \ac{NRP}, tendo como estudo de caso um hospital de Taiwan. 
-
-% É apresentado um modelo que integra  agendamento da enfermeira e do quarto cirúrgico e em seguida é mostrado por \cite{belien:2008} uma a abordagem da técnica de geração de coluna, um dos métodos exatos mais empregados para resolver problemas de programação de enfermeiros, pode fazer face facilmente a essa extensão de modelo.
+\cite{wu:2015} elaborou uma formulação matemática para o Problema de Escalonamento de Enfermeira e propôs uma solução baseada em Enxame de Partículas, realizando um estudo de caso em um hospital em Taiwan, com objetivo de minimizar a quantidade de desvios de cada turno de trabalho e dia de folga. Os testes foram realizados em três conjuntos de dados reais do hospital estudado, produzindo soluções ótimas nos três problemas testados.
 
 Foi apresentado por \cite{lu:2012} um método baseado em \textit{Adaptive Neighborhood Search} para resolver o \ac{NSP} para do \textit{ First International Nurse Rostering Competition}.  Os resultados computacionais avaliados nos três conjuntos de 60 instâncias da competição mostram que o algoritmo utilizado melhora os resultados mais conhecidos por 12 instâncias ao combinar os melhores limites para outras 39 instâncias.
 
-% Foi elaborado por \cite{burke:2010} um modelo de Programação Inteira e \textit{Variable Neighbourhood Search} para o Problema de Seleção de Enfermeiras, tendo como resultado boas soluções quando comparado com as soluções elaboradas com Algoritmos Genéticos e Busca em Vizinhança.
+\cite{altamirano:2010} apresentou uma abordagem baseada em Enxame de Particulas para solucionai o Problema de Escalonamento de Enfermeira Anestesiologista em um hospital público francês, com o objetivo de maximizar a equidade do cronograma. Os autores compararam a solução elaborada com técnicas de Programação Linear e Programação por Restrição, encontrando a solução ótima em menos tempo.
 
-% Foi elaborado para a  Primeira Competição Internacional de Enfermagem (INRC2010),  uma abordagem em duas fases por \cite{valouxis:2012}, em sua solução na primeira fase, a carga de trabalho para cada enfermeiro e para cada dia da semana foi decidida, enquanto na segunda fase as deslocações diárias específicas foram atribuídas.
+Baseado na teoria Fuzzy, \cite{mutingi:2013}  elaborou uma heurística para o escalonamento de Equipe de Atenção Domiciliar, utilizando o método de Enxame de Partículas Fuzzy, tendo como objetivo minimizar o desequilíbrio da carga de trabalho, evitando viagens de longa distância para pacientes e violação das janelas de tempo dos pacientes. Os testes foram realizados a partir de dados obtidos em \cite{bachouch:2010}. 
+
+Foi elaborado um modelo baseado em Lógica Fuzzy para solucionar o Problema de Escalonamento de Enfermeira por \cite{topaloglu:2010}, utilizando dados do mundo real para validar os testes computacionais. 
+
+Um modelo de Programação Inteira Multi Objetivo para o Problema de Escalonamento de Enfermeira foi proposto por \cite{cetin:2015}, em seguida os autores elaboram uma abordagem baseada em Lógica Fuzzy e aplicam a um estudo de cado em um hospital em Konya, na Turquia.
+
+Foi elaborado por \cite{gutjahra:2007} uma heurística baseada em Colônia de Formiga para resolver o \ac{NSP} no \textit{Vienna Hospital Compound} na Áustria. Os autores compararam o a solução elaborada com Algorítimos Gulosos. Após realizar experimentos com 50 dados diferentes, foi observado que o algoritmo proposto alcança melhorias significativas em comparação a um algoritmo de abordagem gulosa.
+
+Em busca de encontrar a solução para o Problema de Roteamento e Escalonamento da Equipe de Atenção Domiciliar, \cite{trautsamwieser:2014} elaboraram uma heurística  \textit{Branch-Price-and-Cut} usando as soluções de uma abordagem de solução de pesquisa de vizinhança variável como limites superiores para o Problema. Em testes computacionais o autor testou sua abordagem com instâncias baseadas em mais de nove enfermeiras, 45 clientes e 203 visitas durante a semana.
 
 %\section{Análise descritiva dos resultados encontrados}
 
