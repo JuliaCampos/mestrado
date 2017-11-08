@@ -34,19 +34,21 @@ Tendo como estudo de caso o \ac{SAD}, sob a administração do \ac{HHCP} na cida
 
 A metodologia utilizada neste projeto levará em consideração a aplicação da técnica de Programação por Restrições. A Programação por Restrições é uma técnica poderosa para resolver problemas de otimização combinatória que se baseia em uma ampla gama de técnicas de inteligência artificial e pesquisa operacional. A Programação por Restrições é atualmente aplicada com sucesso em vários domínios, como em problemas de escalonamento, planejamento, e roteamento de veículos. A ideia básica da Programação por Restrições é a possibilidade de expressar o problema em forma de restrições lógicas e utilizar um solucionador de restrições de propósito geral para resolvê-las.
 
+Considere uma sequência de variáveis $Y = \{ y_1, y_2, \dots, y_k \}$ no qual $k>0$ com seus respectivos domínios $\Omega = \{\Omega_1, \Omega_2, \dots, \Omega_n\}$. Por uma restrição $R$ sobre as variáveis de $Y$ entende-se um subconjunto de $\Omega_1 \times \dots \times \Omega_n$.
+O Problema de Satisfação de Restrição (PSR) pode ser descrito como uma sequência finita de variáveis $X = \{x_1, x_2, \dots, x_n\}$, com seus respectivos domínios $D = \{\Omega_1, \Omega_2, \dots, \Omega_n\}$ e um conjunto finito de restrições $R$. 
+O PSR pode ser escrito como $(R, \Omega\varepsilon)$, onde $\Omega\varepsilon = \{x_1 \in \Omega_1, x_2 \in \Omega_2, \dots, x_n \in \Omega_n \}$.
 
-A definição clássica de um Problema de Satisfação de Restrição (PSR) pode ser expressado da seguinte forma. Um PSR $\mathcal{P}$ é um tripla $P = (X D, C)$ onde $X $é uma $n$-upla das variáveis $X = (x_1, x_2, ..., x_n)$, $D$ é uma $n$-upla de domínios $D = (D_1, D_2, ..., D_n)$ tal que $x_i \in D_i$, $C$ é uma $t$-upla de restrições $C = (C_1, C_2,. . . , C_t)$. Uma restrição $C_j$ é um par $(R_{S_j}, S_j)$ onde $R_{S_j}$ é um subconjunto do produto cartesiano dos domínios das variáveis em $S_j$. Uma solução para o PSR $\mathcal{P}$ é uma $n$-upla $A = (a_1, a_2, ...,a_n)$ e onde $a_i \in D_i$ e cada $C_j$ são satisfeitos.
-
+Uma solução para um PSR é uma sequência de valores para todas as suas variáveis, de modo que todas as restrições sejam satisfeitas.
+%Considerando um PSR $(R, \Omega\varepsilon)$, com  $\Omega\varepsilon = \{x_1 \in \Omega_1, x_2 \in \Omega_2, \dots, x_n \in \Omega_n \}$. É dito que uma n-tupla $(\omega_1, \omega_2, \dots, \omega_n) \in \Omega_1 \times \dots \times \Omega_n$ satisfaz uma restrição $R$, em um conjunto específico de restrições $R'$, sobre um conjunto de variáveis $X = \{x_{i1}, x_{i2}, \dots, x_{im}\}$ se $(\omega_1, \omega_2, \dots, \omega_n) \in R$. Então uma n-tupla $(\omega_1, \omega_2, \dots, \omega_n) \in \Omega_1 \times \dots \times \Omega_n$ é a solução para $(R,\Omega\varepsilon)$ se satisfaz toda restrição $R \in R'$. 
+ Se um PSR tem uma solução, dizemos que é consistente, caso contrário dizemos que é inconsistente.
 % Programação por Restrições consiste em um conjunto finito de restrições contendo conjunções de literais, objetos atômicos comuns sem símbolos de função e restrições sobre um determinado domínio. A Programação por Restrições Lógicas é uma extensão da Programação Lógica, sendo ambas consideradas pertencentes ao paradigma declarativo, dessa forma o programador foca em o que computar ao invés de como computar~\cite{maria:2008}.
-
 %textbf{As restrições lineares} denotam restrições construídas a partir de variáveis
 %ujo domínio é dado pelo conjunto dos números reais. Para este tipo de
 %estrições têm sido implementados meta-interpretadores de restrições bastante
 %ficientes que utilizam o algoritmo Simplex como ponto de partida.
+As restrições do PSR podem ser classificadas em fortes ou fracas. As restrições fortes são aquelas que devem ser satisfeitas obrigatoriamente; e as restrições fracas, também chamadas de opcionais, formam um conjunto de restrições que podem ser satisfeitas se possível, mas para as quais aceita-se que nem todas poderão ser atendidas.
 
-As restrições no conjunto $C$ podem ser classificadas em fortes ou fracas. As restrições fortes são aquelas que devem ser satisfeitas obrigatoriamente; e as restrições fracas formam um conjunto de restrições que devem ser satisfeitas se possível, mas para as quais sabem-se que nem todas poderão ser atendidas.
-
-A partir da análise dos mateiras estudados, foi verificado que o método de Programação por Restrições tem se mostrado eficiente na solução de problemas de escalonamento e de roteamento na áreas da saúde. 
+A partir da análise dos mateiras estudados, foi verificado que o técnica de Programação por Restrições tem se mostrado eficiente na solução de problemas de escalonamento e de roteamento na áreas da saúde. 
 
 O \ac{SAD} no \ac{FESFSUS} precisa lidar diariamente com as seguintes restrições:
 
